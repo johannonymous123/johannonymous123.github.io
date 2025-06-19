@@ -1,16 +1,20 @@
 ---
 layout: default
-title: Welcome
+title: About
 ---
 
-## Welcome to my website
+<section class="about">
+  <div class="profile">
+    <img src="/assets/headshot.jpg" alt="Johannes Krotz" class="headshot">
+    <div class="bio">
+      <h2>Johannes Krotz</h2>
+      <p>Postdoctoral Researcher in Aerospace and Mechanical Engineering at the University of Notre Dame. My research focuses on mathematical modeling with applications in physics and engineering.</p>
+    </div>
+  </div>
 
-I'm Johannes Krotz, a researcher in applied mathematics...
-
-- [Email](mailto:johannes.krotz@example.com)
-- [GitHub](https://github.com/johannonymous123)
-- [LinkedIn](https://www.linkedin.com/in/johanneskrotz)
-- [Download CV](/assets/cv_johannes_krotz.pdf)
-
-
+  <footer class="social-links">
+    <a href="https://github.com/johannonymous123" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/johanneskrotz" target="_blank">LinkedIn</a>
+  </footer>
+</section>
 
