@@ -36,3 +36,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButtons = document.querySelectorAll('.toggle-btn');
+  toggleButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.classList.toggle('hidden');
+      }
+    });
+  });
+});
+

@@ -272,3 +272,71 @@ body {
   display: none;
 }
 
+.research-section {
+  margin-top: 2em;
+}
+
+.research-section h2 {
+  font-size: 1.6em;
+  color: #ddd;
+  margin-bottom: 0.3em;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.2em;
+}
+
+.research-section p {
+  font-size: 1em;
+  margin: 0.5em 0 1em;
+}
+
+.research-section ul {
+  padding-left: 1.5em;
+  list-style-type: disc;
+}
+
+.research-section li {
+  margin-bottom: 0.3em;
+}
+
+
+.teaching-section {
+  margin-top: 2em;
+}
+
+.term-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.term-list li {
+  margin-bottom: 1em;
+}
+
+.teaching-btn {
+  margin-left: 1em;
+  background-color: #444;
+  color: #eee;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3em 0.6em;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.teaching-btn:hover {
+  background-color: #666;
+}
+
+.teaching-toggle {
+  margin-top: 0.4em;
+  padding-left: 1em;
+  border-left: 3px solid #666;
+  background-color: #1e1e1e;
+  padding: 0.7em;
+  font-size: 0.95em;
+}
+
+.hidden {
+  display: none;
+}
+
