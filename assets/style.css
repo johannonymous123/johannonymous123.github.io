@@ -193,3 +193,63 @@ body {
   text-decoration: underline;
 }
 
+
+.publications {
+  margin-top: 2em;
+}
+
+.pub-year {
+  text-align: right;
+  font-size: 2em;
+  font-weight: bold;
+  color: #888;
+  margin-top: 2em;
+  border-bottom: 1px solid #555;
+  padding-bottom: 0.2em;
+}
+
+.pub-entry {
+  margin: 1.5em 0 2em;
+  padding-left: 1em;
+  border-left: 3px solid #555;
+}
+
+.pub-info p {
+  margin: 0.3em 0;
+}
+
+.pub-title {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.pub-authors u {
+  text-decoration: underline;
+}
+
+.pub-journal {
+  font-style: italic;
+  color: #aaa;
+}
+
+.pub-buttons {
+  margin-top: 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.pub-btn {
+  padding: 0.3em 0.8em;
+  background-color: #333;
+  color: #eee;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease;
+}
+
+.pub-btn:hover {
+  background-color: #555;
+}
+
