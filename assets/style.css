@@ -150,3 +150,17 @@ body.light .navbar a:hover {
   background-color: #ddd;
 }
 
+/* Optional transition */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Style the toggle button */
+#theme-toggle {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.2em;
+  cursor: pointer;
+}
