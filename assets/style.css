@@ -87,3 +87,66 @@ main {
   text-decoration: underline;
 }
 
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  position: relative;
+  padding-right: 3em; /* to make room for toggle button */
+}
+
+#theme-toggle {
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #e0e0e0;
+  transition: color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  color: #aaa;
+}
+
+/* Default (dark) styles */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark header {
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+body.dark .navbar a {
+  color: #e0e0e0;
+}
+
+body.dark .navbar a:hover {
+  background-color: #333;
+}
+
+/* Light mode overrides */
+body.light {
+  background-color: #fefefe;
+  color: #111;
+}
+
+body.light header {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+}
+
+body.light .navbar a {
+  color: #111;
+}
+
+body.light .navbar a:hover {
+  background-color: #ddd;
+}
+
