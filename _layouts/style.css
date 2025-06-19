@@ -1,0 +1,87 @@
+/* Default dark theme with support for light theme toggle */
+:root {
+  color-scheme: light dark;
+  --bg-color-light: #fdfdfd;
+  --text-color-light: #111;
+  --bg-color-dark: #1c1c1c;
+  --text-color-dark: #eee;
+}
+
+html[data-theme='light'] {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+html[data-theme='dark'],
+html:not([data-theme='light']) {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  padding: 1rem;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #888;
+  padding-bottom: 0.5rem;
+}
+
+.nav-tabs {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-tabs li a, .nav-tabs button {
+  color: inherit;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-tabs button:hover, .nav-tabs a:hover {
+  text-decoration: underline;
+}
+
+.about .profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.headshot {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.bio {
+  flex: 1;
+  min-width: 250px;
+}
+
+.social-links a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  text-align: center;
+  opacity: 0.6;
+}
+
