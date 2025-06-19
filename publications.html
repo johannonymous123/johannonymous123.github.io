@@ -5,41 +5,81 @@ title: Publications
 
 <h1>Publications</h1>
 
+
 <div class="publications">
 
-  <!-- Year Header -->
   <div class="pub-year">2025</div>
 
   <div class="pub-entry">
     <div class="pub-info">
-      <p class="pub-title">Title of a 2025 Paper</p>
+      <p class="pub-title">Probabilistic Modeling of Dynamic Systems</p>
       <p class="pub-authors">Author A, <u>Johannes Krotz</u>, Author C</p>
-      <p class="pub-journal"><em>Journal of Applied Research</em></p>
+      <p class="pub-journal"><em>Journal of Advanced Models</em></p>
     </div>
+
     <div class="pub-buttons">
-      <a class="pub-btn" href="#">Abstract</a>
-      <a class="pub-btn" href="#">BibTeX</a>
-      <a class="pub-btn" href="#">URL</a>
-      <a class="pub-btn" href="#">PDF</a>
-      <a class="pub-btn" href="#">Plain Summary</a>
+      <button class="pub-btn toggle-btn" data-target="abs-1">Abstract</button>
+      <button class="pub-btn toggle-btn" data-target="bib-1">BibTeX</button>
+      <a class="pub-btn" href="https://journal.com/paper123" target="_blank">URL</a>
+      <a class="pub-btn" href="{{ '/assets/paper123.pdf' | relative_url }}" target="_blank">PDF</a>
+      <button class="pub-btn toggle-btn" data-target="sum-1">Plain Summary</button>
+    </div>
+
+    <div class="pub-toggle hidden" id="abs-1">
+      <p>This paper develops a probabilistic model for dynamic systems under uncertainty using Gaussian processes and flow-based transformations.</p>
+    </div>
+
+    <div class="pub-toggle hidden" id="bib-1">
+      <pre>@article{krotz2025probabilistic,
+  title={Probabilistic Modeling of Dynamic Systems},
+  author={Author A and Johannes Krotz and Author C},
+  journal={Journal of Advanced Models},
+  year={2025}
+}</pre>
+    </div>
+
+    <div class="pub-toggle hidden" id="sum-1">
+      <p>Imagine trying to predict how a system like the weather behaves. This paper provides tools that help us make these predictions more reliable, even when we don’t know everything exactly.</p>
     </div>
   </div>
 
+</div>
+
   <!-- Another year -->
+<div class="publications">
+
   <div class="pub-year">2023</div>
 
   <div class="pub-entry">
     <div class="pub-info">
-      <p class="pub-title">Another Research Paper</p>
-      <p class="pub-authors"><u>Johannes Krotz</u>, Author B</p>
-      <p class="pub-journal"><em>Mathematical Modelling Letters</em></p>
+      <p class="pub-title">Probabilistic Modeling of Dynamic Systems</p>
+      <p class="pub-authors">Author A, <u>Johannes Krotz</u>, Author C</p>
+      <p class="pub-journal"><em>Journal of Advanced Models</em></p>
     </div>
+
     <div class="pub-buttons">
-      <a class="pub-btn" href="#">Abstract</a>
-      <a class="pub-btn" href="#">BibTeX</a>
-      <a class="pub-btn" href="#">URL</a>
-      <a class="pub-btn" href="#">PDF</a>
-      <a class="pub-btn" href="#">Plain Summary</a>
+      <button class="pub-btn toggle-btn" data-target="abs-1">Abstract</button>
+      <button class="pub-btn toggle-btn" data-target="bib-1">BibTeX</button>
+      <a class="pub-btn" href="https://journal.com/paper123" target="_blank">URL</a>
+      <a class="pub-btn" href="{{ '/assets/paper123.pdf' | relative_url }}" target="_blank">PDF</a>
+      <button class="pub-btn toggle-btn" data-target="sum-1">Plain Summary</button>
+    </div>
+
+    <div class="pub-toggle hidden" id="abs-1">
+      <p>This paper develops a probabilistic model for dynamic systems under uncertainty using Gaussian processes and flow-based transformations.</p>
+    </div>
+
+    <div class="pub-toggle hidden" id="bib-1">
+      <pre>@article{krotz2025probabilistic,
+  title={Probabilistic Modeling of Dynamic Systems},
+  author={Author A and Johannes Krotz and Author C},
+  journal={Journal of Advanced Models},
+  year={2025}
+}</pre>
+    </div>
+
+    <div class="pub-toggle hidden" id="sum-1">
+      <p>Imagine trying to predict how a system like the weather behaves. This paper provides tools that help us make these predictions more reliable, even when we don’t know everything exactly.</p>
     </div>
   </div>
 
