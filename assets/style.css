@@ -340,3 +340,31 @@ body {
   display: none;
 }
 
+.cv-btn {
+  margin-left: 1em;
+  background-color: #444;
+  color: #eee;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3em 0.6em;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.cv-btn:hover {
+  background-color: #666;
+}
+
+.cv-toggle {
+  background-color: #1e1e1e;
+  border-left: 3px solid #555;
+  padding: 0.8em;
+  margin-top: 0.5em;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+.hidden {
+  display: none;
+}
+
