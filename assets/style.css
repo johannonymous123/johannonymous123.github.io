@@ -166,3 +166,30 @@ body {
   font-size: 1.2em;
   cursor: pointer;
 }
+
+.cv-section {
+  margin-top: 2em;
+}
+
+.cv-section h2 {
+  margin-top: 1.5em;
+  border-bottom: 1px solid #555;
+  padding-bottom: 0.3em;
+}
+
+.cv-section h3 {
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+.cv-section ul {
+  margin-top: 0.3em;
+  padding-left: 1.5em;
+  list-style-type: disc;
+}
+
+.cv-section a {
+  color: #4aa8ff;
+  text-decoration: underline;
+}
+
