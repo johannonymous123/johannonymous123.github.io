@@ -1,20 +1,34 @@
----
-layout: default
-title: About
----
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | Johannes Krotz</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <script defer src="/assets/theme-toggle.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="/">Johannes Krotz</a></h1>
+    <nav>
+      <ul class="nav-tabs">
+        <li><a href="/">About</a></li>
+        <li><a href="/research.html">Research</a></li>
+        <li><a href="/publications.html">Publications</a></li>
+        <li><a href="/teaching.html">Teaching</a></li>
+        <li><a href="/cv.html">CV</a></li>
+        <li><button id="theme-toggle" aria-label="Toggle dark mode">🌓</button></li>
+      </ul>
+    </nav>
+  </header>
 
-<section class="about">
-  <div class="profile">
-    <img src="/assets/headshot.jpg" alt="Johannes Krotz" class="headshot">
-    <div class="bio">
-      <h2>Johannes Krotz</h2>
-      <p>Postdoctoral Researcher in Aerospace and Mechanical Engineering at the University of Notre Dame. My research focuses on mathematical modeling with applications in physics and engineering.</p>
-    </div>
-  </div>
+  <main>
+    {{ content }}
+  </main>
 
-  <footer class="social-links">
-    <a href="https://github.com/johannonymous123" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/johanneskrotz" target="_blank">LinkedIn</a>
+  <footer class="site-footer">
+    <p>&copy; 2025 Johannes Krotz</p>
   </footer>
-</section>
+</body>
+</html>
 
