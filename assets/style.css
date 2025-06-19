@@ -239,39 +239,6 @@ body {
   gap: 0.5em;
 }
 
-.pub-btn {
-  padding: 0.3em 0.8em;
-  background-color: #333;
-  color: #eee;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 0.9em;
-  transition: background-color 0.2s ease;
-}
-
-.pub-btn:hover {
-  background-color: #555;
-}
-
-.pub-toggle {
-  background-color: #1e1e1e;
-  padding: 0.8em;
-  margin-top: 0.5em;
-  border-left: 3px solid #444;
-  font-size: 0.95em;
-  line-height: 1.4;
-}
-
-.pub-toggle pre {
-  white-space: pre-wrap;
-  word-break: break-word;
-  font-family: monospace;
-}
-
-.hidden {
-  display: none;
-}
-
 .research-section {
   margin-top: 2em;
 }
@@ -340,10 +307,49 @@ body {
   display: none;
 }
 
-.cv-btn {
-  margin-left: 1em;
-  background-color: #444;
-  color: #eee;
+
+.hidden {
+  display: none;
+}
+
+/* Theme-specific CSS variables */
+body.dark {
+  --toggle-bg: #1e1e1e;
+  --text-color: #e0e0e0;
+  --border-color: #555;
+
+  --button-bg: #444;
+  --button-hover: #666;
+  --button-text: #eee;
+}
+
+body.light {
+  --toggle-bg: #f0f0f0;
+  --text-color: #111;
+  --border-color: #ccc;
+
+  --button-bg: #ddd;
+  --button-hover: #bbb;
+  --button-text: #000;
+}
+
+.cv-toggle,
+.pub-toggle,
+.teaching-toggle {
+  padding: 0.8em;
+  margin-top: 0.5em;
+  font-size: 0.95em;
+  line-height: 1.4;
+  border-left: 3px solid var(--border-color);
+  background-color: var(--toggle-bg);
+  color: var(--text-color);
+}
+
+.cv-btn,
+.pub-btn,
+.teaching-btn {
+  background-color: var(--button-bg);
+  color: var(--button-text);
   border: none;
   border-radius: 4px;
   padding: 0.3em 0.6em;
@@ -351,20 +357,9 @@ body {
   cursor: pointer;
 }
 
-.cv-btn:hover {
-  background-color: #666;
-}
-
-.cv-toggle {
-  background-color: #1e1e1e;
-  border-left: 3px solid #555;
-  padding: 0.8em;
-  margin-top: 0.5em;
-  font-size: 0.95em;
-  line-height: 1.4;
-}
-
-.hidden {
-  display: none;
+.cv-btn:hover,
+.pub-btn:hover,
+.teaching-btn:hover {
+  background-color: var(--button-hover);
 }
 
