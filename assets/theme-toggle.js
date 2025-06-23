@@ -33,15 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.getElementById(targetId);
       const isVisible = target && !target.classList.contains('hidden');
 
-      // Hide all toggled content on the page
-      const allToggles = document.querySelectorAll('.pub-toggle, .cv-toggle, .teaching-toggle, .toggle-target');
-      allToggles.forEach(el => el.classList.add('hidden'));
+      // Hide ALL toggled elements on the entire page, unconditionally
+      document.querySelectorAll('.pub-toggle, .cv-toggle, .teaching-toggle, .toggle-target')
+        .forEach(el => el.classList.add('hidden'));
 
-      // If target was previously hidden, show it
+      // Show the clicked one ONLY if it was previously hidden
       if (target && !isVisible) {
         target.classList.remove('hidden');
       }
     });
   });
 });
+
 
