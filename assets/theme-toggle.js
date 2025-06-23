@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Optional: hide siblings inside the same section if needed
       const container = btn.closest('section');
-      const allToggles = container ? container.querySelectorAll('.cv-toggle, .toggle-target') : [];
+      const allToggles = container ? container.querySelectorAll('.pub-toggle,.cv-toggle, .toggle-target,.teaching-toggle') : [];
 
       allToggles.forEach(el => {
         if (el !== target) el.classList.add('hidden');
