@@ -31,19 +31,23 @@ document.addEventListener('DOMContentLoaded', () => {
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
         const targetId = btn.getAttribute('data-target');
-        const target = entry.querySelector(`#${targetId}`);
+        const target = document.getElementById(targetId); // 🔧 use global ID lookup
 
-        // Hide all other toggles in this pub-entry
-        entry.querySelectorAll('.pub-toggle').forEach(el => {
-          if (el !== target) el.classList.add('hidden');
+        // Hide all pub-toggle elements that are associated with this entry
+        const relatedToggles = document.querySelectorAll('.pub-toggle');
+        relatedToggles.forEach(el => {
+          if (entry.contains(el)) {
+            if (el !== target) el.classList.add('hidden');
+          }
         });
 
-        // Toggle this one
+        // Toggle the one we clicked
         if (target) target.classList.toggle('hidden');
       });
     });
   });
 });
+
 
 
 
