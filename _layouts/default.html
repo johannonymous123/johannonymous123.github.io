@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/assets/style.css">
 <style>
   .navbar {
     display: flex;
@@ -62,3 +68,29 @@
     }
   }
 </style>
+
+</head>
+<body>
+  <header>
+   <nav class="navbar">
+  <div class="navbar-left">Johannes Krotz (PhD)</div>
+  <div class="navbar-center">
+    <a href="/">About</a>
+    <a href="/research.html">Research</a>
+    <a href="/publications.html">Publications</a>
+    <a href="/teaching.html">Teaching</a>
+    <a href="/cv.html">CV</a>
+  </div>
+  <div class="navbar-right">
+    <button id="theme-toggle" aria-label="Toggle dark/light mode">☀️</button>
+  </div>
+</nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <script src="{{ '/assets/theme-toggle.js' | relative_url }}"></script>
+</body>
+</html>
