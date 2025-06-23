@@ -23,29 +23,27 @@
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
-  const pubEntries = document.querySelectorAll('.pub-entry');
+  const toggleButtons = document.querySelectorAll('.toggle-btn');
 
-  pubEntries.forEach(entry => {
-    const buttons = entry.querySelectorAll('.toggle-btn');
+  toggleButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const target = document.getElementById(targetId); // global lookup
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const targetId = btn.getAttribute('data-target');
-        const target = entry.querySelector(`#${targetId}`); // ✅ scoped lookup
+      // Optional: hide siblings inside the same section if needed
+      const container = btn.closest('section');
+      const allToggles = container ? container.querySelectorAll('.cv-toggle, .pub-toggle, .toggle-target') : [];
 
-        // Hide all pub-toggle elements that are associated with this entry
-        const relatedToggles = entry.querySelectorAll('.pub-toggle');
-        relatedToggles.forEach(el => {
-          if (el !== target) el.classList.add('hidden');
-        });
-
-        // Toggle the one we clicked
-        if (target) target.classList.toggle('hidden');
+      allToggles.forEach(el => {
+        if (el !== target) el.classList.add('hidden');
       });
+
+      if (target) {
+        target.classList.toggle('hidden');
+      }
     });
   });
 });
-
 
 
 
