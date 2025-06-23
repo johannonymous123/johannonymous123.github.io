@@ -23,51 +23,26 @@
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
-  const pubEntries = document.querySelectorAll('.pub-entry');
-
-  pubEntries.forEach(entry => {
-    const buttons = entry.querySelectorAll('.toggle-btn');
-
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const targetId = btn.getAttribute('data-target');
-        const target = entry.querySelector(`#${targetId}`); // ✅ scoped lookup
-
-        // Hide all pub-toggle elements that are associated with this entry
-        const relatedToggles = entry.querySelectorAll('.pub-toggle');
-        relatedToggles.forEach(el => {
-          if (el !== target) el.classList.add('hidden');
-        });
-
-        // Toggle the one we clicked
-        if (target) target.classList.toggle('hidden');
-      });
-    });
-  });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
   const toggleButtons = document.querySelectorAll('.toggle-btn');
 
   toggleButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const targetId = btn.getAttribute('data-target');
-      const target = document.getElementById(targetId); // global lookup
+      const target = document.getElementById(targetId);
 
-      // Optional: hide siblings inside the same section if needed
-      const container = btn.closest('section');
-      const allToggles = container ? container.querySelectorAll('.pub-toggle,.cv-toggle, .toggle-target,.teaching-toggle') : [];
+      // Find the closest parent container/tab (e.g., section, .pub-entry, etc.)
+      const container = btn.closest('section, .pub-entry, .cv-entry, .teaching-entry, .tab-content');
 
+      if (!container) return;
+
+      // Hide all toggleable content boxes inside the same container
+      const allToggles = container.querySelectorAll('.pub-toggle, .cv-toggle, .teaching-toggle, .toggle-target');
       allToggles.forEach(el => {
         if (el !== target) el.classList.add('hidden');
       });
 
-      if (target) {
-        target.classList.toggle('hidden');
-      }
+      // Toggle target visibility
+      if (target) target.classList.toggle('hidden');
     });
   });
 });
-
-
-
