@@ -22,6 +22,8 @@
   });
 })();
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const toggleButtons = document.querySelectorAll('.toggle-btn');
 
@@ -31,16 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.getElementById(targetId);
       const isVisible = target && !target.classList.contains('hidden');
 
-      // Find the container section (can be .teaching-section, .cv-entry, etc.)
-      const container = btn.closest('section, .cv-entry, .pub-entry, .tab-content');
-
-      if (!container) return;
-
-      // Hide all content blocks inside the container
-      const allToggles = container.querySelectorAll('.pub-toggle, .cv-toggle, .teaching-toggle, .toggle-target');
+      // Hide all toggled content on the page
+      const allToggles = document.querySelectorAll('.pub-toggle, .cv-toggle, .teaching-toggle, .toggle-target');
       allToggles.forEach(el => el.classList.add('hidden'));
 
-      // Toggle the target only if it was hidden before (so you can re-close it)
+      // If target was previously hidden, show it
       if (target && !isVisible) {
         target.classList.remove('hidden');
       }
