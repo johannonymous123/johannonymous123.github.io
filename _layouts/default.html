@@ -9,33 +9,56 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.5em 1em;
+      padding: 0.8em 1em;
+      flex-wrap: wrap;
     }
 
     .navbar-left {
+      flex: 1;
+      text-align: left;
       font-weight: bold;
       font-size: 1.4em;
     }
 
-    .navbar-right {
+    .navbar-center {
+      flex: 2;
       display: flex;
-      gap: 1em;
-      align-items: center;
+      justify-content: center;
+      gap: 1.5em;
+      flex-wrap: wrap;
+    }
+
+    .navbar-center a {
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .navbar-right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
     }
 
     #theme-toggle {
       font-size: 1em;
-      padding: 0.2em 0.5em;
+      padding: 0.3em 0.6em;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .navbar {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
       }
 
+      .navbar-left,
       .navbar-right {
-        flex-wrap: wrap;
+        text-align: center;
+        flex: 100%;
+        margin-bottom: 0.5em;
+      }
+
+      .navbar-center {
+        justify-content: center;
       }
     }
   </style>
@@ -44,7 +67,7 @@
   <header>
     <nav class="navbar">
       <div class="navbar-left">Johannes Krotz (PhD)</div>
-      <div class="navbar-right">
+      <div class="navbar-center">
         <a href="/">About</a>
         <a href="/research.html">Research</a>
         <a href="/publications.html">Publications</a>
@@ -52,6 +75,7 @@
         <a href="/cv.html">CV</a>
         <button id="theme-toggle" aria-label="Toggle dark/light mode">☀️</button>
       </div>
+      <div class="navbar-right"></div>
     </nav>
   </header>
 
