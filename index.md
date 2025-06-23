@@ -9,8 +9,11 @@ title: About
     <div class="bio">
       <h2>Johannes Krotz</h2>
       <p>I am a Postdoctoral Researcher in Aerospace and Mechanical Engineering at the University of Notre Dame. 
-      
+      </p>
+      <p>
       My research focuses on mathematical modeling and scientific computation with applications in physics and engineering.
+      </p>
+      <p>
       This website is still a work in progress in will be further populated over time.
       </p>
     </div>
