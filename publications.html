@@ -1,5 +1,5 @@
 ---
-layout: default
+ayout: default
 title: Publications
 ---
 
@@ -11,29 +11,36 @@ title: Publications
 
   <div class="pub-entry">
     <div class="pub-info">
-      <p class="pub-title">Probabilistic Modeling of Dynamic Systems</p>
-      <p class="pub-authors">Author A, <u>Johannes Krotz</u>, Author C</p>
-      <p class="pub-journal"><em>Journal of Advanced Models</em></p>
+      <p class="pub-title">A dynamic likelihood approach to filtering transport processes: advection-diffusion dynamics</p>
+      <p class="pub-authors"> <u>Johannes Krotz</u>,Juan M. Restrepo, Jorge Ramirez</p>
+      <p class="pub-journal"><em>Journal of Computational Physics</em></p>
     </div>
 
     <div class="pub-buttons">
       <button class="pub-btn toggle-btn" data-target="abs-1">Abstract</button>
       <button class="pub-btn toggle-btn" data-target="bib-1">BibTeX</button>
-      <a class="pub-btn" href="https://journal.com/paper123" target="_blank">URL</a>
-      <a class="pub-btn" href="{{ '/assets/paper123.pdf' | relative_url }}" target="_blank">PDF</a>
-      <button class="pub-btn toggle-btn" data-target="sum-1">Plain Summary</button>
+      <a class="pub-btn" href="https://doi.org/10.1016/j.jcp.2025.114089" target="_blank">URL</a>
+     <button class="pub-btn toggle-btn" data-target="sum-1">In Simple Terms</button>
     </div>
 
     <div class="pub-toggle hidden" id="abs-1">
-      <p>This paper develops a probabilistic model for dynamic systems under uncertainty using Gaussian processes and flow-based transformations.</p>
+      <p>A Bayesian data assimilation scheme is formulated for advection-dominated advective and diffusive evolutionary problems, based upon the Dynamic Likelihood (DLF) approach to filtering. The DLF was developed specifically for hyperbolic problems –waves–, and in this paper, it is extended via a split step formulation, to handle advection-diffusion problems. In the dynamic likelihood approach, observations and their statistics are used to propagate probabilities along characteristics, evolving the likelihood in time. The estimate posterior thus inherits phase information. For advection-diffusion the advective part of the time evolution is handled on the basis of observations alone, while the diffusive part is informed through the model as well as observations. We expect, and indeed show here, that in advection-dominated problems, the DLF approach produces better estimates than other assimilation approaches, particularly when the observations are sparse and have low uncertainty. The added computational expense of the method is cubic in the total number of observations over time, which is on the same order of magnitude as a standard Kalman filter and can be mitigated by bounding the number of forward propagated observations, discarding the least informative data.</p>
     </div>
 
     <div class="pub-toggle hidden" id="bib-1">
-      <pre>@article{krotz2025probabilistic,
-  title={Probabilistic Modeling of Dynamic Systems},
-  author={Author A and Johannes Krotz and Author C},
-  journal={Journal of Advanced Models},
-  year={2025}
+      <pre>@article{KROTZ_2025_DynamicLikelihoodFilter,
+title = {A dynamic likelihood approach to filtering transport processes: advection-diffusion dynamics},
+journal = {Journal of Computational Physics},
+volume = {536},
+pages = {114089},
+year = {2025},
+issn = {0021-9991},
+doi = {https://doi.org/10.1016/j.jcp.2025.114089},
+url = {https://www.sciencedirect.com/science/article/pii/S0021999125003729},
+author = {Johannes Krotz and Juan M. Restrepo and Jorge Ramirez},
+keywords = {Data assimilation, Bayesian estimation, Dynamic likelihood filter, Advection-diffusion, Transport, Kalman filter},
+abstract = {A Bayesian data assimilation scheme is formulated for advection-dominated advective and diffusive evolutionary problems, based upon the Dynamic Likelihood (DLF) approach to filtering. The DLF was developed specifically for hyperbolic problems –waves–, and in this paper, it is extended via a split step formulation, to handle advection-diffusion problems. In the dynamic likelihood approach, observations and their statistics are used to propagate probabilities along characteristics, evolving the likelihood in time. The estimate posterior thus inherits phase information. For advection-diffusion the advective part of the time evolution is handled on the basis of observations alone, while the diffusive part is informed through the model as well as observations. We expect, and indeed show here, that in advection-dominated problems, the DLF approach produces better estimates than other assimilation approaches, particularly when the observations are sparse and have low uncertainty. The added computational expense of the method is cubic in the total number of observations over time, which is on the same order of magnitude as a standard Kalman filter and can be mitigated by bounding the number of forward propagated observations, discarding the least informative data.}
+}
 }</pre>
     </div>
 
