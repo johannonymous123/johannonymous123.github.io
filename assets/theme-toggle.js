@@ -23,6 +23,30 @@
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
+  const pubEntries = document.querySelectorAll('.pub-entry');
+
+  pubEntries.forEach(entry => {
+    const buttons = entry.querySelectorAll('.toggle-btn');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        const target = entry.querySelector(`#${targetId}`); // ✅ scoped lookup
+
+        // Hide all pub-toggle elements that are associated with this entry
+        const relatedToggles = entry.querySelectorAll('.pub-toggle');
+        relatedToggles.forEach(el => {
+          if (el !== target) el.classList.add('hidden');
+        });
+
+        // Toggle the one we clicked
+        if (target) target.classList.toggle('hidden');
+      });
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
   const toggleButtons = document.querySelectorAll('.toggle-btn');
 
   toggleButtons.forEach(btn => {
@@ -32,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Optional: hide siblings inside the same section if needed
       const container = btn.closest('section');
-      const allToggles = container ? container.querySelectorAll('.cv-toggle, .pub-toggle, .toggle-target') : [];
+      const allToggles = container ? container.querySelectorAll('.cv-toggle, .toggle-target') : [];
 
       allToggles.forEach(el => {
         if (el !== target) el.classList.add('hidden');
