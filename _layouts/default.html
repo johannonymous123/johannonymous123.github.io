@@ -4,17 +4,55 @@
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
   <link rel="stylesheet" href="/assets/style.css">
+  <style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5em 1em;
+    }
+
+    .navbar-left {
+      font-weight: bold;
+      font-size: 1.4em;
+    }
+
+    .navbar-right {
+      display: flex;
+      gap: 1em;
+      align-items: center;
+    }
+
+    #theme-toggle {
+      font-size: 1em;
+      padding: 0.2em 0.5em;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar-right {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <a href="/">About</a>
-      <a href="/research.html">Research</a>
-      <a href="/publications.html">Publications</a>
-      <a href="/teaching.html">Teaching</a>
-      <a href="/cv.html">CV</a>
-      <button id="theme-toggle" aria-label="Toggle dark/light mode">☀️</button>   
- </nav>
+      <div class="navbar-left">Johannes Krotz (PhD)</div>
+      <div class="navbar-right">
+        <a href="/">About</a>
+        <a href="/research.html">Research</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/teaching.html">Teaching</a>
+        <a href="/cv.html">CV</a>
+        <button id="theme-toggle" aria-label="Toggle dark/light mode">☀️</button>
+      </div>
+    </nav>
   </header>
 
   <main>
@@ -24,4 +62,3 @@
   <script src="{{ '/assets/theme-toggle.js' | relative_url }}"></script>
 </body>
 </html>
-

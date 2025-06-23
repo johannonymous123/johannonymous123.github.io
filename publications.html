@@ -47,14 +47,15 @@ abstract = {A Bayesian data assimilation scheme is formulated for advection-domi
         paper, it is extended via a split step formulation, to handle advection-diffusion problems. 
         In the dynamic likelihood approach, observations and their statistics are used to propagate 
         probabilities along characteristics, evolving the likelihood in time. The estimate posterior
-        thus inherits phase information. For advection-diffusion the advective part of the time evolution 
-        is handled on the basis of observations alone, while the diffusive part is informed through 
-        the model as well as observations. We expect, and indeed show here, that in advection-dominated
-        problems, the DLF approach produces better estimates than other assimilation approaches, 
-        particularly when the observations are sparse and have low uncertainty. The added computational 
-        expense of the method is cubic in the total number of observations over time, which is on the same 
-        order of magnitude as a standard Kalman filter and can be mitigated by bounding the number of 
-        forward propagated observations, discarding the least informative data.}}}
+        thus inherits phase information. For advection-diffusion the advective part of the time 
+        evolution is handled on the basis of observations alone, while the diffusive part is informed 
+        through the model as well as observations. We expect, and indeed show here, that in 
+        advection-dominated problems, the DLF approach produces better estimates than other 
+        assimilation approaches, particularly when the observations are sparse and have low 
+        uncertainty. The added computational expense of the method is cubic in the total number of 
+        observations over time, which is on the same order of magnitude as a standard Kalman filter 
+        and can be mitigated by bounding the number of forward propagated observations, discarding 
+        the least informative data.}}}
         </pre>
     </div>
 
@@ -117,6 +118,9 @@ abstract = {We present a hybrid method for time-dependent particle transport pro
   </div>
 </div>
 
+
+
+
 <div class="pub-year">2023</div>
 
 <div class="pub-entry">
@@ -127,17 +131,17 @@ abstract = {We present a hybrid method for time-dependent particle transport pro
   </div>
 
   <div class="pub-buttons">
-    <button class="pub-btn toggle-btn" data-target="abs-2">Abstract</button>
-    <button class="pub-btn toggle-btn" data-target="bib-2">BibTeX</button>
+    <button class="pub-btn toggle-btn" data-target="abs-3">Abstract</button>
+    <button class="pub-btn toggle-btn" data-target="bib-3">BibTeX</button>
     <a class="pub-btn" href="https://doi.org/10.1016/j.cam.2022.114094" target="_blank">URL</a>
-    <button class="pub-btn toggle-btn" data-target="sum-2">In Simple Terms</button>
+    <button class="pub-btn toggle-btn" data-target="sum-3">In Simple Terms</button>
   </div>
 
-  <div class="pub-toggle hidden" id="abs-2">
+  <div class="pub-toggle hidden" id="abs-3">
     <p>We present the near-Maximal Algorithm for Poisson-disk Sampling (nMAPS) to generate point distributions for variable resolution Delaunay triangular and tetrahedral meshes in two and three-dimensions, respectively. nMAPS consists of two principal stages. In the first stage, an initial point distribution is produced using a cell-based rejection algorithm. In the second stage, holes in the sample are detected using an efficient background grid and filled in to obtain a near-maximal covering. Extensive testing shows that nMAPS generates a variable resolution mesh in linear run time with the number of accepted points. We demonstrate nMAPS capabilities by meshing three-dimensional discrete fracture networks (DFN) and the surrounding volume. The discretized boundaries of the fractures, which are represented as planar polygons, are used as the seed of 2D-nMAPS to produce a conforming Delaunay triangulation. The combined mesh of the DFN is used as the seed for 3D-nMAPS, which produces conforming Delaunay tetrahedra surrounding the network. Under a set of conditions that naturally arise in maximal Poisson-disk samples and are satisfied by nMAPS, the two-dimensional Delaunay triangulations are guaranteed to only have well-behaved triangular faces. While nMAPS does not provide triangulation quality bounds in more than two dimensions, we found that low-quality tetrahedra in 3D are infrequent, can be readily detected and removed, and a high quality balanced mesh is produced.</p>
   </div>
 
-  <div class="pub-toggle hidden" id="bib-2">
+  <div class="pub-toggle hidden" id="bib-3">
     <pre>@article{KROTZ_2022_PoissonDiskDFN,
 title = {Variable resolution Poisson-disk sampling for meshing discrete fracture networks},
 journal = {Journal of Computational and Applied Mathematics},
@@ -152,12 +156,12 @@ keywords = {Discrete fracture network, Maximal Poisson-disk sampling, Mesh gener
 abstract = {We present the near-Maximal Algorithm for Poisson-disk Sampling (nMAPS) to generate point 
         distributions for variable resolution Delaunay triangular and tetrahedral meshes in two and 
         three-dimensions, respectively. nMAPS consists of two principal stages. In the first stage, 
-        an initial point distribution is produced using a cell-based rejection algorithm. In the second 
-        stage, holes in the sample are detected using an efficient background grid and filled in to 
-        obtain a near-maximal covering. Extensive testing shows that nMAPS generates a variable resolution
-        mesh in linear run time with the number of accepted points. We demonstrate nMAPS capabilities 
-        by meshing three-dimensional discrete fracture networks (DFN) and the surrounding volume. 
-        The discretized boundaries of the fractures, which are represented as planar polygons, are 
+        an initial point distribution is produced using a cell-based rejection algorithm. In the 
+        second stage, holes in the sample are detected using an efficient background grid and filled
+        in to obtain a near-maximal covering. Extensive testing shows that nMAPS generates a variable 
+        resolution mesh in linear run time with the number of accepted points. We demonstrate nMAPS 
+        capabilities by meshing three-dimensional discrete fracture networks (DFN) and the surrounding 
+        volume. The discretized boundaries of the fractures, which are represented as planar polygons, are 
         used as the seed of 2D-nMAPS to produce a conforming Delaunay triangulation. The combined mesh
         of the DFN is used as the seed for 3D-nMAPS, which produces conforming Delaunay tetrahedra 
         surrounding the network. Under a set of conditions that naturally arise in maximal Poisson-disk 
@@ -168,7 +172,7 @@ abstract = {We present the near-Maximal Algorithm for Poisson-disk Sampling (nMA
    </pre>
   </div>
 
-  <div class="pub-toggle hidden" id="sum-2">
+  <div class="pub-toggle hidden" id="sum-3">
     <p>TBD</p>
   </div>
 </div>
