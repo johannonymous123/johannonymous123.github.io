@@ -29,20 +29,22 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       const targetId = btn.getAttribute('data-target');
       const target = document.getElementById(targetId);
+      const isVisible = target && !target.classList.contains('hidden');
 
-      // Find the closest parent container/tab (e.g., section, .pub-entry, etc.)
-      const container = btn.closest('section, .pub-entry, .cv-entry, .teaching-entry, .tab-content');
+      // Find the container section (can be .teaching-section, .cv-entry, etc.)
+      const container = btn.closest('section, .cv-entry, .pub-entry, .tab-content');
 
       if (!container) return;
 
-      // Hide all toggleable content boxes inside the same container
+      // Hide all content blocks inside the container
       const allToggles = container.querySelectorAll('.pub-toggle, .cv-toggle, .teaching-toggle, .toggle-target');
-      allToggles.forEach(el => {
-        if (el !== target) el.classList.add('hidden');
-      });
+      allToggles.forEach(el => el.classList.add('hidden'));
 
-      // Toggle target visibility
-      if (target) target.classList.toggle('hidden');
+      // Toggle the target only if it was hidden before (so you can re-close it)
+      if (target && !isVisible) {
+        target.classList.remove('hidden');
+      }
     });
   });
 });
+
