@@ -22,19 +22,29 @@
   });
 })();
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const toggleButtons = document.querySelectorAll('.toggle-btn');
+  const allTargets = new Map();
+
   toggleButtons.forEach(btn => {
+    const targetId = btn.getAttribute('data-target');
+    const target = document.getElementById(targetId);
+    if (target) {
+      allTargets.set(btn, target);
+    }
+
     btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-target');
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.classList.toggle('hidden');
-      }
+      allTargets.forEach((t, b) => {
+        if (b === btn) {
+          // Toggle the clicked one
+          t.classList.toggle('hidden');
+        } else {
+          // Hide all others
+          t.classList.add('hidden');
+        }
+      });
     });
   });
 });
-
 
 
