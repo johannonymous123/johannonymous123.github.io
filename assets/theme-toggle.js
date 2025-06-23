@@ -23,28 +23,27 @@
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
-  const toggleButtons = document.querySelectorAll('.toggle-btn');
-  const allTargets = new Map();
+  const pubEntries = document.querySelectorAll('.pub-entry');
 
-  toggleButtons.forEach(btn => {
-    const targetId = btn.getAttribute('data-target');
-    const target = document.getElementById(targetId);
-    if (target) {
-      allTargets.set(btn, target);
-    }
+  pubEntries.forEach(entry => {
+    const buttons = entry.querySelectorAll('.toggle-btn');
 
-    btn.addEventListener('click', () => {
-      allTargets.forEach((t, b) => {
-        if (b === btn) {
-          // Toggle the clicked one
-          t.classList.toggle('hidden');
-        } else {
-          // Hide all others
-          t.classList.add('hidden');
-        }
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        const target = entry.querySelector(`#${targetId}`);
+
+        // Hide all other toggles in this pub-entry
+        entry.querySelectorAll('.pub-toggle').forEach(el => {
+          if (el !== target) el.classList.add('hidden');
+        });
+
+        // Toggle this one
+        if (target) target.classList.toggle('hidden');
       });
     });
   });
 });
+
 
 
