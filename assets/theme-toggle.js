@@ -31,14 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
         const targetId = btn.getAttribute('data-target');
-        const target = document.getElementById(targetId); // 🔧 use global ID lookup
+        const target = entry.querySelector(`#${targetId}`); // ✅ scoped lookup
 
         // Hide all pub-toggle elements that are associated with this entry
-        const relatedToggles = document.querySelectorAll('.pub-toggle');
+        const relatedToggles = entry.querySelectorAll('.pub-toggle');
         relatedToggles.forEach(el => {
-          if (entry.contains(el)) {
-            if (el !== target) el.classList.add('hidden');
-          }
+          if (el !== target) el.classList.add('hidden');
         });
 
         // Toggle the one we clicked
