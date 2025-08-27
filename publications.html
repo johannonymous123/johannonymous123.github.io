@@ -318,14 +318,14 @@ abstract = {We present the near-Maximal Algorithm for Poisson-disk Sampling (nMA
   <p>
     nMAPS starts by <em>sprinkling points</em> using <strong>Poisson-disk sampling</strong>. Think of scattering seeds
     so that no two land too close together (to avoid clusters) and the whole area is covered (to avoid gaps).
-    nMAPS extends this with <strong>variable resolution</strong>: it places more points where fractures intersect—where
-    geometry and gradients are complex—and fewer points farther away, where things are smoother.
+    nMAPS extends this with <strong>variable resolution</strong>: it places more points where fractures intersect, where
+    geometry and gradients are complex, and fewer points farther away, where things are smoother.
   </p>
 
   <p>
     After placing points, nMAPS connects them with a <strong>Delaunay triangulation</strong> to make the mesh. In 2D,
     this produces triangles that are better shaped for simulation. In 3D, the method includes a practical step to
-    <em>detect and remove “slivers”</em>—unhealthy, skinny tetrahedra—then re-triangulates, improving overall mesh quality.
+    <em>detect and remove “slivers”</em>, unhealthy, skinny tetrahedra, then re-triangulates, improving overall mesh quality.
   </p>
 
   <h3>Why It Matters</h3>
