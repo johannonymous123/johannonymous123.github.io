@@ -58,65 +58,84 @@ abstract = {A Bayesian data assimilation scheme is formulated for advection-domi
         the least informative data.}}}
         </pre>
     </div>
-
 <div class="pub-toggle hidden" id="sum-1">
   <p>
-    Imagine trying to predict how sunlight travels through Earth’s atmosphere, how radiation moves inside a nuclear reactor, 
-    or how heat from a laser interacts with a dense plasma. All of these processes involve <strong>particles moving, bouncing, 
-    and sometimes getting absorbed</strong> as they travel through a medium. Modeling these processes accurately is a monumental challenge. 
+    Imagine you’re trying to follow the spread of smoke in the air, or how pollutants drift and mix in a river. These
+    processes are driven by two forces: <strong>advection</strong> (movement along currents, carrying things downstream
+    or with the wind) and <strong>diffusion</strong> (spreading and blurring out over time). Scientists want to predict
+    these processes as accurately as possible — but the problem is, we never have perfect information. We rely on
+    <em>models</em> (our best guess of the physics) and <em>observations</em> (data from sensors). Blending these two
+    is called <strong>data assimilation</strong>.
   </p>
 
   <p>
-    Traditionally, scientists have relied on two approaches: <em>deterministic methods</em>, which translate physics into large systems 
-    of equations, and <em>Monte Carlo methods</em>, which simulate particle paths randomly. Each has strengths and weaknesses. Deterministic 
-    methods can be precise but become prohibitively expensive at high resolution. Monte Carlo is flexible and natural for complex geometries, 
-    but it’s noisy and often requires an enormous number of samples to be reliable. 
+    The classic tool for this job is the <strong>Kalman Filter</strong>, which acts like a smart balance: constantly
+    correcting a model with incoming data. It works well when observations are plentiful and evenly spaced. But in the
+    real world, data is often <em>sparse</em> (only a few sensors, not everywhere all the time) — and this is exactly
+    where traditional methods begin to struggle.
   </p>
 
-  <h3>The Core Idea: Pre- and Post-Collision Particles</h3>
+  <h3>The Core Idea: A Dynamic Likelihood</h3>
   <p>
-    The hybrid method presented in this paper blends the two approaches by recognizing that particles behave differently depending 
-    on whether they’ve collided yet. 
+    This paper develops the <strong>Dynamic Likelihood Filter (DLF)</strong> for advection–diffusion problems. The key
+    innovation is that instead of waiting passively for the next measurement, the DLF <em>projects existing observations
+    forward in time</em> along the natural flow of the system. In other words, it doesn’t just use a measurement once and
+    discard it. It “carries” that information along the path particles or pollutants would naturally follow, generating
+    <strong>pseudo-observations</strong> at new times and places where sensors may not exist.
+  </p>
+
+  <p>
+    For the <em>advective part</em> of the process (the bulk flow), these pseudo-observations are especially powerful.
+    For the <em>diffusive part</em> (the spreading and smoothing), the DLF blends in predictions from the model itself.
+    Together, this allows the filter to maintain not only the <em>amount</em> of what is being transported, but also its
+    <em>location and phase</em> — something traditional methods tend to lose quickly as diffusion blurs the signal.
+  </p>
+
+  <h3>Why This Matters</h3>
+  <p>
+    The DLF is designed for the kinds of real-world challenges that matter most:
   </p>
   <ul>
-    <li><strong>Pre-collision (uncollided):</strong> particles stream like rays of light. Their paths are straightforward, and Monte Carlo 
-    can handle them efficiently — essentially like ray tracing.</li>
-    <li><strong>Post-collision (collided):</strong> once particles scatter, their distribution becomes smoother and more diffuse. A deterministic 
-    solver is better suited here, capturing the averaged behavior without tracking every random path.</li>
+    <li><strong>Sparse but reliable data:</strong> a few high-quality sensors instead of dense networks.</li>
+    <li><strong>Advection-dominated systems:</strong> where currents, winds, or flows move things much more than they diffuse.</li>
+    <li><strong>Uncertain models:</strong> situations where we know the equations but don’t capture every detail of reality.</li>
   </ul>
   <p>
-    A clever <em>relabeling step</em> keeps the balance by periodically shifting some particles back into the pre-collision group, ensuring 
-    the method stays both accurate and efficient over time.
+    These situations arise in <strong>meteorology</strong> (weather forecasting with limited stations), <strong>environmental
+    monitoring</strong> (tracking contaminants in rivers or the atmosphere), and <strong>engineering</strong> (any process
+    where materials or signals are transported through space and time).
   </p>
 
-  <h3>Results &amp; Takeaways</h3>
+  <h3>What the Results Show</h3>
   <p>
-    Across standard benchmark problems, the hybrid method consistently delivered <strong>greater accuracy at significantly lower cost</strong>. 
-    Unlike pure deterministic solvers, it avoided artificial streaks (“ray effects”), and unlike pure Monte Carlo, it didn’t require massive 
-    sample counts. Overall, it achieved comparable or better accuracy with <em>about an order of magnitude less computational complexity</em>.
+    Numerical experiments in the paper show that the DLF consistently outperforms the standard Kalman Filter when
+    advection dominates and data is sparse. It:
   </p>
+  <ul>
+    <li>Produces more accurate estimates of both <em>intensity</em> and <em>location</em>.</li>
+    <li>Corrects errors in initial conditions more quickly.</li>
+    <li>Handles uncertain or slightly wrong models better, staying anchored to reality.</li>
+  </ul>
   <p>
-    This is more than a technical curiosity — it has direct relevance to <strong>nuclear engineering</strong>, <strong>astrophysics</strong>, 
-    <strong>medical physics</strong>, and <strong>fusion research</strong>. Anywhere particles stream and scatter through matter, this method 
-    can provide faster, cleaner, and more reliable simulations. 
-  </p>
-
-  <h3>Looking Ahead</h3>
-  <p>
-    While the current work focuses on single-energy problems, the approach naturally extends to more complex cases, such as multi-energy 
-    neutron transport or nonlinear radiative transfer in astrophysics. Future versions may even include adaptive strategies to automatically 
-    balance the two solvers as the simulation evolves. 
+    There is a tradeoff: the DLF requires more computation. But the paper demonstrates practical ways to manage this,
+    such as discarding “stale” pseudo-observations once they no longer add value. This keeps the method efficient while
+    retaining its accuracy advantage.
   </p>
 
+  <h3>The Bigger Picture</h3>
   <p>
-    <em>In short:</em> By treating particles before and after collisions differently — Monte Carlo for the sharp, ray-like stage, and deterministic 
-    solvers for the scattered stage — this hybrid method achieves what neither approach can do alone: <strong>faster, more accurate, 
-    and more practical simulations of particle transport</strong>.
+    Originally, the Dynamic Likelihood idea was built for wave problems. Extending it to advection–diffusion, one of
+    the most common forms of transport in nature and engineering,  shows its broader potential. By projecting
+    observations dynamically, the DLF squeezes more information out of every measurement. It makes data assimilation
+    <strong>smarter, more resilient to sparse data, and better at tracking where things actually are</strong>.
+  </p>
+
+  <p>
+    <em>In short:</em> The Dynamic Likelihood Filter lets us do more with less. It turns limited observations into a
+    continuous source of information, improving forecasts in fields from weather and climate science to pollution
+    monitoring and engineering transport problems.
   </p>
 </div>
-
-
-
   </div>
 
 </div>
@@ -168,8 +187,60 @@ abstract = {We present a hybrid method for time-dependent particle transport pro
     </pre>
   </div>
 
-  <div class="pub-toggle hidden" id="sum-2">
-    <p>TBD</p>
+  <div class="pub-toggle hidden" id="sum-2">  
+  <p>
+    Imagine trying to predict how sunlight travels through Earth’s atmosphere, how radiation moves inside a nuclear reactor, 
+    or how heat from a laser interacts with a dense plasma. All of these processes involve <strong>particles moving, bouncing, 
+    and sometimes getting absorbed</strong> as they travel through a medium. Modeling these processes accurately is a monumental challenge. 
+  </p>
+
+  <p>
+    Traditionally, scientists have relied on two approaches: <em>deterministic methods</em>, which translate physics into large systems 
+    of equations, and <em>Monte Carlo methods</em>, which simulate particle paths randomly. Each has strengths and weaknesses. Deterministic 
+    methods can be precise but become prohibitively expensive at high resolution. Monte Carlo is flexible and natural for complex geometries, 
+    but it’s noisy and often requires an enormous number of samples to be reliable. 
+  </p>
+
+  <h3>The Core Idea: Pre- and Post-Collision Particles</h3>
+  <p>
+    The hybrid method presented in this paper blends the two approaches by recognizing that particles behave differently depending 
+    on whether they’ve collided yet. 
+  </p>
+  <ul>
+    <li><strong>Pre-collision (uncollided):</strong> particles stream like rays of light. Their paths are straightforward, and Monte Carlo 
+    can handle them efficiently — essentially like ray tracing.</li>
+    <li><strong>Post-collision (collided):</strong> once particles scatter, their distribution becomes smoother and more diffuse. A deterministic 
+    solver is better suited here, capturing the averaged behavior without tracking every random path.</li>
+  </ul>
+  <p>
+    A clever <em>relabeling step</em> keeps the balance by periodically shifting some particles back into the pre-collision group, ensuring 
+    the method stays both accurate and efficient over time.
+  </p>
+
+  <h3>Results &amp; Takeaways</h3>
+  <p>
+    Across standard benchmark problems, the hybrid method consistently delivered <strong>greater accuracy at significantly lower cost</strong>. 
+    Unlike pure deterministic solvers, it avoided artificial streaks (“ray effects”), and unlike pure Monte Carlo, it didn’t require massive 
+    sample counts. Overall, it achieved comparable or better accuracy with <em>about an order of magnitude less computational complexity</em>.
+  </p>
+  <p>
+    This is more than a technical curiosity, it has direct relevance to <strong>nuclear engineering</strong>, <strong>astrophysics</strong>, 
+    <strong>medical physics</strong>, and <strong>fusion research</strong>. Anywhere particles stream and scatter through matter, this method 
+    can provide faster, cleaner, and more reliable simulations. 
+  </p>
+
+  <h3>Looking Ahead</h3>
+  <p>
+    While the current work focuses on single-energy problems, the approach naturally extends to more complex cases, such as multi-energy 
+    neutron transport or nonlinear radiative transfer in astrophysics. Future versions may even include adaptive strategies to automatically 
+    balance the two solvers as the simulation evolves. 
+  </p>
+
+  <p>
+    <em>In short:</em> By treating particles before and after collisions differently,  Monte Carlo for the sharp, ray-like stage, and deterministic 
+    solvers for the scattered stage,  this hybrid method achieves what neither approach can do alone: <strong>faster, more accurate, 
+    and more practical simulations of particle transport</strong>.
+  </p>
   </div>
 </div>
 
