@@ -299,9 +299,62 @@ abstract = {We present the near-Maximal Algorithm for Poisson-disk Sampling (nMA
   </div>
 
   <div class="pub-toggle hidden" id="sum-3">
-    <p>TBD</p>
-  </div>
+
+  <p>
+    When engineers and geoscientists model how water, oil, gas, or contaminants move underground, they often
+    need to account for cracks in the rock. These fractures form intricate networks that guide where fluids can
+    flow. To simulate this on a computer, you don’t just draw the fractures—you build a <strong>mesh</strong>:
+    a set of triangles (in 2D) or tetrahedra (in 3D) that fills the fractures and the surrounding rock.
+  </p>
+
+  <p>
+    There’s a balancing act. If the mesh is too coarse, you miss important details. If it’s too fine, the simulation
+    can become prohibitively expensive. And if the mesh has poorly shaped elements, numerical solvers can struggle.
+    This paper introduces <strong>nMAPS</strong> (near-Maximal Algorithm for Poisson-disk Sampling), a way to
+    generate meshes that aim to be both efficient and well-balanced for discrete fracture networks (DFNs).
+  </p>
+
+  <h3>The Core Idea: Poisson-Disk Sampling</h3>
+  <p>
+    nMAPS starts by <em>sprinkling points</em> using <strong>Poisson-disk sampling</strong>. Think of scattering seeds
+    so that no two land too close together (to avoid clusters) and the whole area is covered (to avoid gaps).
+    nMAPS extends this with <strong>variable resolution</strong>: it places more points where fractures intersect—where
+    geometry and gradients are complex—and fewer points farther away, where things are smoother.
+  </p>
+
+  <p>
+    After placing points, nMAPS connects them with a <strong>Delaunay triangulation</strong> to make the mesh. In 2D,
+    this produces triangles that are better shaped for simulation. In 3D, the method includes a practical step to
+    <em>detect and remove “slivers”</em>—unhealthy, skinny tetrahedra—then re-triangulates, improving overall mesh quality.
+  </p>
+
+  <h3>Why It Matters</h3>
+  <p>
+    Reliable meshes are essential for trustworthy simulations of fractured rock. By directly generating a variable-resolution
+    point set and then triangulating, nMAPS can reduce unnecessary computational effort while still capturing the features
+    that matter. In tests on synthetic DFNs, the approach produced well-shaped elements in 2D and reduced problematic
+    tetrahedra in 3D. It also compared favorably with existing workflows that refine meshes iteratively, with run times
+    that scale efficiently with the number of points.
+  </p>
+
+  <p>
+    This makes nMAPS a practical option for teams modeling groundwater flow, energy extraction, or contaminant transport
+    in fractured media, and it may be useful in other settings that face similar meshing challenges.
+  </p>
+
+  <h3>In Summary</h3>
+  <p>
+    nMAPS offers a straightforward way to build meshes that balance accuracy, efficiency, and numerical robustness.
+    It doesn’t solve every meshing challenge, but it provides a useful step toward making fracture-network simulations
+    more dependable and accessible.
+  </p>
+
+
+
+
+
 </div>
+    </div>
 
 <!-- Template
 
