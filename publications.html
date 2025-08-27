@@ -59,9 +59,64 @@ abstract = {A Bayesian data assimilation scheme is formulated for advection-domi
         </pre>
     </div>
 
-    <div class="pub-toggle hidden" id="sum-1">
-      <p>TBD</p>
-    </div>
+<div class="pub-toggle hidden" id="sum-1">
+  <p>
+    Imagine trying to predict how sunlight travels through Earth’s atmosphere, how radiation moves inside a nuclear reactor, 
+    or how heat from a laser interacts with a dense plasma. All of these processes involve <strong>particles moving, bouncing, 
+    and sometimes getting absorbed</strong> as they travel through a medium. Modeling these processes accurately is a monumental challenge. 
+  </p>
+
+  <p>
+    Traditionally, scientists have relied on two approaches: <em>deterministic methods</em>, which translate physics into large systems 
+    of equations, and <em>Monte Carlo methods</em>, which simulate particle paths randomly. Each has strengths and weaknesses. Deterministic 
+    methods can be precise but become prohibitively expensive at high resolution. Monte Carlo is flexible and natural for complex geometries, 
+    but it’s noisy and often requires an enormous number of samples to be reliable. 
+  </p>
+
+  <h3>The Core Idea: Pre- and Post-Collision Particles</h3>
+  <p>
+    The hybrid method presented in this paper blends the two approaches by recognizing that particles behave differently depending 
+    on whether they’ve collided yet. 
+  </p>
+  <ul>
+    <li><strong>Pre-collision (uncollided):</strong> particles stream like rays of light. Their paths are straightforward, and Monte Carlo 
+    can handle them efficiently — essentially like ray tracing.</li>
+    <li><strong>Post-collision (collided):</strong> once particles scatter, their distribution becomes smoother and more diffuse. A deterministic 
+    solver is better suited here, capturing the averaged behavior without tracking every random path.</li>
+  </ul>
+  <p>
+    A clever <em>relabeling step</em> keeps the balance by periodically shifting some particles back into the pre-collision group, ensuring 
+    the method stays both accurate and efficient over time.
+  </p>
+
+  <h3>Results &amp; Takeaways</h3>
+  <p>
+    Across standard benchmark problems, the hybrid method consistently delivered <strong>greater accuracy at significantly lower cost</strong>. 
+    Unlike pure deterministic solvers, it avoided artificial streaks (“ray effects”), and unlike pure Monte Carlo, it didn’t require massive 
+    sample counts. Overall, it achieved comparable or better accuracy with <em>about an order of magnitude less computational complexity</em>.
+  </p>
+  <p>
+    This is more than a technical curiosity — it has direct relevance to <strong>nuclear engineering</strong>, <strong>astrophysics</strong>, 
+    <strong>medical physics</strong>, and <strong>fusion research</strong>. Anywhere particles stream and scatter through matter, this method 
+    can provide faster, cleaner, and more reliable simulations. 
+  </p>
+
+  <h3>Looking Ahead</h3>
+  <p>
+    While the current work focuses on single-energy problems, the approach naturally extends to more complex cases, such as multi-energy 
+    neutron transport or nonlinear radiative transfer in astrophysics. Future versions may even include adaptive strategies to automatically 
+    balance the two solvers as the simulation evolves. 
+  </p>
+
+  <p>
+    <em>In short:</em> By treating particles before and after collisions differently — Monte Carlo for the sharp, ray-like stage, and deterministic 
+    solvers for the scattered stage — this hybrid method achieves what neither approach can do alone: <strong>faster, more accurate, 
+    and more practical simulations of particle transport</strong>.
+  </p>
+</div>
+
+
+
   </div>
 
 </div>
