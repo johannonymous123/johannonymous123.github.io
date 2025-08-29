@@ -11,6 +11,111 @@ title: Publications
 
   <div class="pub-entry">
     <div class="pub-info">
+      <p class="pub-title">Curvilinear coordinates and curvature in radiative transport</p>
+      <p class="pub-authors"><u>Johannes Krotz</u>, Ryan G. McClarren</p>
+      <p class="pub-journal"><em>Journal of Computational and Theoretical Transport</em> (under review)</p>
+    </div>
+
+    <div class="pub-buttons">
+      <button class="pub-btn toggle-btn" data-target="abs-4">Abstract</button>
+      <button class="pub-btn toggle-btn" data-target="bib-4">BibTeX</button>
+      <a class="pub-btn" href="https://doi.org/10.48550/arXiv.2508.20852" target="_blank">URL</a>
+      <button class="pub-btn toggle-btn" data-target="sum-4">In Simple Terms</button>
+    </div>
+
+    <div class="pub-toggle hidden" id="abs-4">
+      <p>We derive a general expression for the streaming term in radiative transport equations and other transport problems when formulated in curvilinear coordinates, emphasizing coordinate systems adapted to the geometry of the domain and the directional dependence of particle transport. By parametrizing the angular variable using a local orthonormal frame, we express directional derivatives in terms of curvature-related quantities that reflect the geometry of underlying spatial manifolds. Our formulation highlights how the interaction between coordinate choices and curvature influences the streaming operator, offering geometric interpretations of its components. The resulting framework offers intuitive insight into when and how angular dependence can be simplified and may guide the selection of coordinate systems that balance analytical tractability and computational efficiency.</p>
+    </div>
+
+    <div class="pub-toggle hidden" id="bib-4">
+      <pre>@misc{krotz2025curvilinearcoordinatescurvatureradiative,
+      title={Curvilinear coordinates and curvature in radiative transport}, 
+      author={Johannes Krotz and Ryan G. McClarren},
+      year={2025},
+      eprint={2508.20852},
+      archivePrefix={arXiv},
+      primaryClass={math.NA},
+      url={https://arxiv.org/abs/2508.20852}, 
+}</pre>
+    </div>
+
+    <div class="pub-toggle hidden" id="sum-4">
+  <p>
+    When scientists simulate how light, radiation, or particles move through a medium — whether inside a star, in the
+    Earth's atmosphere, or in a nuclear reactor — they use <strong>transport equations</strong>. At the heart of these
+    equations is a deceptively simple piece: the <strong>streaming term</strong>, which tracks how particles move forward
+    in space and direction.
+  </p>
+
+  <p>
+    This sounds straightforward, but there's a twist. Particles don't always move through nice, flat, box-shaped domains.
+    Often the geometry is curved — like spherical shells around a planet, cylindrical reactors, or more irregular shapes.
+    When the geometry is curved, the math describing particle directions also bends. Choosing the right coordinate system
+    can make the problem much easier — or much harder.
+  </p>
+
+  <h3>The Core Idea: Curvature Meets Transport</h3>
+  <p>
+    This work tackles the streaming term when the <em>coordinates</em> themselves are curved — so-called <strong>curvilinear
+    coordinates</strong>. Instead of sticking with the usual Cartesian grid, we allow coordinates that better match the
+    geometry of the problem (spheres, cylinders, ellipses, translating surfaces, etc.).
+  </p>
+
+  <p>
+    The key contribution is a <strong>unified way</strong> to write the directional derivative (how particles stream) in
+    terms of <strong>curvature quantities</strong> — intuitive geometric measures of how surfaces bend and how directions
+    twist around each other. In plain terms:
+  </p>
+  <ul>
+    <li>The math of particle transport isn't just about position and direction.</li>
+    <li>It's also about how the <em>shape of space</em> (flat vs. curved) changes the apparent motion.</li>
+    <li>By expressing the streaming operator via curvatures, we see how geometry and physics interact.</li>
+  </ul>
+
+  <h3>Why This Matters</h3>
+  <p>
+    Traditionally, deriving the streaming term in a curved system requires tedious, case-by-case geometry. Each new
+    coordinate choice (spherical, cylindrical, elliptical…) brings its own messy formulas. This framework offers a
+    <strong>common language</strong> based on curvature, which helps in three ways:
+  </p>
+  <ul>
+    <li><strong>Simplification:</strong> it tells you when certain terms vanish in a given geometry, so the equations get simpler.</li>
+    <li><strong>Intuition:</strong> instead of pages of indices, you reason with "is the surface flat, curved, or twisting?"</li>
+    <li><strong>Practical guidance:</strong> it informs coordinate choices that balance tractability and accuracy.</li>
+  </ul>
+
+  <h3>Putting It Into Practice</h3>
+  <p>
+    The paper walks through familiar cases — cylindrical and spherical setups — and also more involved choices like ellipsoids
+    or translating graphs. The general recipe shows:
+  </p>
+  <ul>
+    <li><strong>Cylinders:</strong> several terms drop out because the relevant surfaces are flat and directions don't twist.</li>
+    <li><strong>Spheres:</strong> curvature naturally appears with clean, symmetric contributions.</li>
+    <li><strong>Ellipsoids / translating surfaces:</strong> complexity increases, but the curvature view still identifies which
+      pieces matter and why.</li>
+  </ul>
+
+  <h3>Takeaway</h3>
+  <p>
+    The contribution isn't a new solver; it's a <strong>geometric perspective</strong> that makes derivations clearer and
+    decisions more informed. By seeing transport through the lens of curvature, researchers can:
+  </p>
+  <ul>
+    <li>avoid unnecessary terms,</li>
+    <li>understand the effect of geometry on streaming, and</li>
+    <li>choose coordinate systems that make the physics — and the computation — more manageable.</li>
+  </ul>
+
+  <p>
+    It's a modest but useful step: connecting particle transport — a cornerstone of many physical simulations — more directly
+    with the language of geometry.
+  </p>
+    </div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-info">
       <p class="pub-title">A dynamic likelihood approach to filtering transport processes: advection-diffusion dynamics</p>
       <p class="pub-authors"> <u>Johannes Krotz</u>,Juan M. Restrepo, Jorge Ramirez</p>
       <p class="pub-journal"><em>Journal of Computational Physics</em></p>
@@ -136,109 +241,6 @@ abstract = {A Bayesian data assimilation scheme is formulated for advection-domi
     monitoring and engineering transport problems.
   </p>
 </div>
-  </div>
-
-  <div class="pub-entry">
-    <div class="pub-info">
-      <p class="pub-title">Curvilinear coordinates and curvature in radiative transport</p>
-      <p class="pub-authors"><u>Johannes Krotz</u>, Ryan G. McClarren</p>
-      <p class="pub-journal"><em>Journal of Computational and Theoretical Transport</em> (under review)</p>
-    </div>
-
-    <div class="pub-buttons">
-      <button class="pub-btn toggle-btn" data-target="abs-4">Abstract</button>
-      <button class="pub-btn toggle-btn" data-target="bib-4">BibTeX</button>
-      <a class="pub-btn" href="https://doi.org/10.48550/arXiv.2508.20852" target="_blank">URL</a>
-      <button class="pub-btn toggle-btn" data-target="sum-4">In Simple Terms</button>
-    </div>
-
-    <div class="pub-toggle hidden" id="abs-4">
-      <p>We derive a general expression for the streaming term in radiative transport equations and other transport problems when formulated in curvilinear coordinates, emphasizing coordinate systems adapted to the geometry of the domain and the directional dependence of particle transport. By parametrizing the angular variable using a local orthonormal frame, we express directional derivatives in terms of curvature-related quantities that reflect the geometry of underlying spatial manifolds. Our formulation highlights how the interaction between coordinate choices and curvature influences the streaming operator, offering geometric interpretations of its components. The resulting framework offers intuitive insight into when and how angular dependence can be simplified and may guide the selection of coordinate systems that balance analytical tractability and computational efficiency.</p>
-    </div>
-
-    <div class="pub-toggle hidden" id="bib-4">
-      <pre>@misc{krotz2025curvilinearcoordinatescurvatureradiative,
-      title={Curvilinear coordinates and curvature in radiative transport}, 
-      author={Johannes Krotz and Ryan G. McClarren},
-      year={2025},
-      eprint={2508.20852},
-      archivePrefix={arXiv},
-      primaryClass={math.NA},
-      url={https://arxiv.org/abs/2508.20852}, 
-}</pre>
-    </div>
-
-    <div class="pub-toggle hidden" id="sum-4">
-      <div class="pub-toggle hidden" id="sum-curvilinear">
-  <p>
-    When scientists simulate how light, radiation, or particles move through a medium,  whether inside a star, in the
-    Earth's atmosphere, or in a nuclear reactor, they use <strong>transport equations</strong>. At the heart of these
-    equations is a deceptively simple piece: the <strong>streaming term</strong>, which tracks how particles move forward
-    in space and direction.
-  </p>
-
-  <p>
-    This sounds straightforward, but there's a twist. Particles don't always move through nice, flat, box-shaped domains.
-    Often the geometry is curved, like spherical shells around a planet, cylindrical reactors, or more irregular shapes.
-    When the geometry is curved, the math describing particle directions also bends. Choosing the right coordinate system
-    can make the problem much easier,  or much harder.
-  </p>
-
-  <h3>The Core Idea: Curvature Meets Transport</h3>
-  <p>
-    This work tackles the streaming term when the <em>coordinates</em> themselves are curved. Instead of sticking with the usual Cartesian grid, we allow coordinates that better match the
-    geometry of the problem (spheres, cylinders, ellipses, translating surfaces, etc.).
-  </p>
-
-  <p>
-    The key contribution is a <strong>unified way</strong> to write the directional derivative (how particles stream) in
-    terms of <strong>curvature quantities</strong>, i.e.  intuitive geometric measures of how surfaces bend and how directions
-    twist around each other. In plain terms:
-  </p>
-  <ul>
-    <li>The math of particle transport isn't just about position and direction.</li>
-    <li>It's also about how the <em>shape of space</em> (flat vs. curved) changes the apparent motion.</li>
-    <li>By expressing the streaming operator via curvatures, we see how geometry and physics interact.</li>
-  </ul>
-
-  <h3>Why This Matters</h3>
-  <p>
-    Traditionally, deriving the streaming term in a curved system requires tedious, case-by-case geometry. Each new
-    coordinate choice (spherical, cylindrical, elliptical…) brings its own messy formulas. This framework offers a
-    <strong>common language</strong> based on curvature, which helps in three ways:
-  </p>
-  <ul>
-    <li><strong>Simplification:</strong> it tells you when certain terms vanish in a given geometry, so the equations get simpler.</li>
-    <li><strong>Intuition:</strong> instead of pages of indices, you reason with "is the surface flat, curved, or twisting?"</li>
-    <li><strong>Practical guidance:</strong> it informs coordinate choices that balance tractability and accuracy.</li>
-  </ul>
-
-  <h3>Putting It Into Practice</h3>
-  <p>
-    The paper walks through familiar cases, such as cylindrical and spherical setups,  and also more involved choices like ellipsoids
-    or translating graphs. The general recipe shows:
-  </p>
-  <ul>
-    <li><strong>Cylinders:</strong> several terms drop out because the relevant surfaces are flat and directions don't twist.</li>
-    <li><strong>Spheres:</strong> curvature naturally appears with clean, symmetric contributions.</li>
-    <li><strong>Ellipsoids / translating surfaces:</strong> complexity increases, but the curvature view still identifies which
-      pieces matter and why.</li>
-  </ul>
-
-  <h3>Takeaway</h3>
-  <p>
-    The contribution isn't a new solver; it's a <strong>geometric perspective</strong> that makes derivations clearer and
-    decisions more informed. By seeing transport through the lens of curvature, researchers can:
-  </p>
-  <ul>
-    <li>avoid unnecessary terms,</li>
-    <li>understand the effect of geometry on streaming, and</li>
-    <li>choose coordinate systems that make the physics, and thereby the computation, more manageable.</li>
-  </ul>
-
- 
-</div>
-    </div>
   </div>
 
 </div>
