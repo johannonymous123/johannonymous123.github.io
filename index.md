@@ -21,8 +21,8 @@ title: About
 
   <footer class="social-links">
     <a href="https://github.com/johannonymous123" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/johanneskrotz" target="_blank">LinkedIn</a>
-        <a href="https://scholar.google.com/citations?user=DQxIF38AAAAJ&hl=en" target="_blank">GoogleScholar</a>
+    <a href="https://www.linkedin.com/in/johannes-krotz" target="_blank">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=O6eCQgEAAAAJ&hl=en" target="_blank">GoogleScholar</a>
 
   </footer>
 </section>
