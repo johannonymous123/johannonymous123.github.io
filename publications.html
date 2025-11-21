@@ -519,7 +519,7 @@ abstract = {We present the near-Maximal Algorithm for Poisson-disk Sampling (nMA
 
   <div class="pub-entry">
     <div class="pub-info">
-      <p class="pub-title">TBD</p>
+      <p class="pub-title">Probabilistic and data-driven methods for numerical PDEs</p>
       <p class="pub-authors"><u>Johannes Krotz</u></p>
       <p class="pub-journal"><em>Dissertation</em></p>
     </div>
@@ -527,20 +527,44 @@ abstract = {We present the near-Maximal Algorithm for Poisson-disk Sampling (nMA
     <div class="pub-buttons">
       <button class="pub-btn toggle-btn" data-target="abs-diss-2024">Abstract</button>
       <button class="pub-btn toggle-btn" data-target="bib-diss-2024">BibTeX</button>
-      <a class="pub-btn" href="#" target="_blank">URL</a>
+      <a class="pub-btn" href="{{ '/assets/Dissertation_Johannes.pdf' | relative_url }}" target="_blank">PDF</a>
       <button class="pub-btn toggle-btn" data-target="sum-diss-2024">In Simple Terms</button>
     </div>
 
     <div class="pub-toggle hidden" id="abs-diss-2024">
-      <p>TBD</p>
+      <p>This dissertation consists of three integral self-contained parts. The first part develops a novel Monte Carlo algorithm, called the near-Maximal Algorithm for Poisson-disk Sampling (nMAPS), to efficiently generate the nodes of a high-quality mesh for the calculation of flow and the associated transport of chemical species in low-permeability fractured rock, such as shale and granite. A good mesh balances accuracy requirements with a reasonable computational cost, i.e., it is generated efficiently, dense where necessary for accuracy, and contains no cells that cause instabilities or blown-up errors. Quality bounds for meshes generated through nMAPS are proven, and its efficiency is demonstrated through numerical experiments (see <em>Variable resolution Poisson-disk sampling</em> paper above for complete details).</p>
+      <p>In the second part, a deterministic Monte Carlo hybrid method for time-dependent problems based on the physics of particle transport described through the linear Boltzmann equation is presented. The method splits the system into collided and uncollided particles and treats these sets with different methods. Uncollided particles are handled through high-accuracy Monte Carlo methods, while the density of collided particles is calculated using discontinuous Galerkin methods. Theoretical details of the algorithm are developed and shown to be effective through numerical experiments. The properties associated with the labeling as collided and uncollided leverage the respective strengths of these methods, allowing for overall more accurate and computationally efficient solving than each method on its own (see <em>Hybrid Monte Carlo, discontinuous Galerkin method</em> paper above for complete details).</p>
+      <p>In the last chapter, an extension to the Dynamic Likelihood Filter (DLF) is presented to include Advection-Diffusion equations. The DLF is a Bayesian estimation method specifically designed for wave-related problems. It improves on traditional methods, such as variants of Kalman filters, by not only using data at its time of observation but also at later times by propagating observations forward through time. This enriches the available data and improves predictions and uncertainties. The theory to include diffusion in the framework of the DLF is developed, and it is shown through numerical experiments that the DLF outperforms traditional data assimilation techniques, especially when observations are precise but sparse in space and time (see <em>Dynamic likelihood approach to filtering</em> paper above for complete details).</p>
     </div>
 
     <div class="pub-toggle hidden" id="bib-diss-2024">
-      <pre>TBD</pre>
+      <pre>@phdthesis{krotz2024dissertation,
+  author = {Johannes Krotz},
+  title = {Probabilistic and data-driven methods for numerical PDEs},
+  school = {University of Tennessee, Knoxville},
+  year = {2024},
+  type = {Ph.D. dissertation}
+}</pre>
     </div>
 
     <div class="pub-toggle hidden" id="sum-diss-2024">
-      <p>TBD</p>
+      <p>This dissertation brings together three innovative computational methods that blend probability with traditional numerical approaches to solve challenging problems in science and engineering. Rather than developing entirely new theory from scratch, it demonstrates how <strong>smart combinations of existing techniques</strong> can lead to significant improvements in computational performance and reliability.</p>
+      
+      <h3>Three Connected Innovations</h3>
+      <p>The dissertation consists of three main chapters, each corresponding to a published paper:</p>
+      <ul>
+        <li><strong>Chapter 2:</strong> Developing better ways to create computational meshes for fractured rock systems (see the <em>Variable resolution Poisson-disk sampling</em> paper above for details)</li>
+        <li><strong>Chapter 3:</strong> Improving how we combine computer models with real-world data to track pollution and other transported substances (see the <em>Dynamic likelihood approach to filtering</em> paper above for details)</li>
+        <li><strong>Chapter 4:</strong> Creating hybrid solvers that combine random sampling with deterministic methods for radiation transport problems (see the <em>Hybrid Monte Carlo, discontinuous Galerkin method</em> paper above for details)</li>
+      </ul>
+
+      <h3>The Common Thread: Probabilistic Meets Deterministic</h3>
+      <p>While these three projects tackle different applications — underground fluid flow, environmental monitoring, and radiation transport — they share a common philosophy: <strong>combining the flexibility of probabilistic methods with the precision of deterministic approaches</strong>. This hybrid thinking allows each method to capture the best of both worlds while avoiding their individual weaknesses.</p>
+
+      <h3>Real-World Impact</h3>
+      <p>The dissertation demonstrates that computational science doesn't always need revolutionary breakthroughs. Sometimes, <strong>thoughtful integration of existing tools</strong> can solve practical problems more effectively. Each method has been tested on realistic problems and shown to outperform traditional approaches, making complex simulations more accessible and reliable for engineers and scientists.</p>
+
+      <p><em>In essence:</em> This work shows how probabilistic thinking can enhance traditional computational methods, leading to faster, more accurate, and more robust simulations across diverse fields in science and engineering.</p>
     </div>
   </div>
 
@@ -548,7 +572,7 @@ abstract = {We present the near-Maximal Algorithm for Poisson-disk Sampling (nMA
 
   <div class="pub-entry">
     <div class="pub-info">
-      <p class="pub-title">TBD</p>
+      <p class="pub-title">Computer Simulation of Gel Formation in Colloidal Systems of Sticky Rods </p>
       <p class="pub-authors"><u>Johannes Krotz</u></p>
       <p class="pub-journal"><em>Master's Thesis</em></p>
     </div>
@@ -556,16 +580,22 @@ abstract = {We present the near-Maximal Algorithm for Poisson-disk Sampling (nMA
     <div class="pub-buttons">
       <button class="pub-btn toggle-btn" data-target="abs-master-2019">Abstract</button>
       <button class="pub-btn toggle-btn" data-target="bib-master-2019">BibTeX</button>
-      <a class="pub-btn" href="#" target="_blank">URL</a>
+      <a class="pub-btn" href="{{ '/assets/Master.pdf' | relative_url }}" target="_blank">PDF</a>
       <button class="pub-btn toggle-btn" data-target="sum-master-2019">In Simple Terms</button>
     </div>
 
     <div class="pub-toggle hidden" id="abs-master-2019">
-      <p>TBD</p>
+      <p>We develop and validate a simulation framework for colloidal gelation. We first reproduce the benchmark results of Santos, Campanella, and Carignano for spherical, gel-forming particles, then extend the methodology to more complex systems of "sticky" spherocylindrical rods interacting via a Kihara-like potential. Using comprehensive parameter sweeps documented for reproducibility, we analyze the emergence of porous, percolating networks and conduct a topological characterization of the resulting microstructures. This characterization leverages Early TDA to extract multiscale connectivity features and to define topology-driven metrics for automated comparison between simulations and experiments. Our simulations reveal a clear dependence of network formation on rod aspect ratio and particle density, consistent with established theory and, to our knowledge, not previously demonstrated for spherocylindrical colloids with Kihara-type interactions. Rheological probing of the simulated systems shows signatures characteristic of gels, which supports the structural analysis. We further compare our computational results with experimental data obtained on Bastian Trepka's gels collected by Jacob Steindl. Although these first comparisons indicate that the present model is not yet sufficient to quantitatively describe those specific gelled systems, the agreement in qualitative trends and the robustness of our tools suggest strong potential. Overall, the work demonstrates functional, extensible methods for simulating gelation in rod-based colloids, provides topological data analysis based metrics that can aid automated comparison between experiments and simulations, and outlines several promising directions for future refinement and application.</p>
     </div>
 
     <div class="pub-toggle hidden" id="bib-master-2019">
-      <pre>TBD</pre>
+      <pre>@mastersthesis{krotz2019master,
+  author = {Johannes Krotz},
+  title = {Computer Simulation of Gel Formation in Colloidal Systems of Sticky Rods},
+  school = {Universität Konstanz},
+  year = {2019},
+  type = {Master's thesis}
+}</pre>
     </div>
 
     <div class="pub-toggle hidden" id="sum-master-2019">
@@ -577,24 +607,32 @@ abstract = {We present the near-Maximal Algorithm for Poisson-disk Sampling (nMA
 
   <div class="pub-entry">
     <div class="pub-info">
-      <p class="pub-title">TBD</p>
+      <p class="pub-title">Gibt es Rotationssymmetrische Fische?</p>
       <p class="pub-authors"><u>Johannes Krotz</u></p>
-      <p class="pub-journal"><em>Bachelor's Thesis</em></p>
+      <p class="pub-journal"><em>Bachelor's Thesis (Mathematics)</em></p>
     </div>
 
     <div class="pub-buttons">
       <button class="pub-btn toggle-btn" data-target="abs-bachelor-2018">Abstract</button>
       <button class="pub-btn toggle-btn" data-target="bib-bachelor-2018">BibTeX</button>
-      <a class="pub-btn" href="#" target="_blank">URL</a>
+      <a class="pub-btn" href="{{ '/assets/BAmathe.pdf' | relative_url }}" target="_blank">PDF</a>
       <button class="pub-btn toggle-btn" data-target="sum-bachelor-2018">In Simple Terms</button>
     </div>
 
     <div class="pub-toggle hidden" id="abs-bachelor-2018">
-      <p>TBD</p>
+      <p>This bachelor's thesis investigates the existence of rotationally symmetric, homothetically shrinking "fish"-shaped hypersurface networks evolving by the Gaussian curvature flow. Building on prior work that established one-dimensional, lens/fish-shaped networks under curve-shortening/curvature flows, the thesis formulates the rotationally symmetric problem in R^{n+1} and derives three equivalent ordinary differential equations from the geometric PDE using distinct parameterizations (axial graph, angular, and radial graph). The core result is an alternative proof of existence in the one-dimensional case; the higher-dimensional case remains open, though supporting lemmas and numerical experiments suggest feasibility.</p>
+      <p>The analysis includes (i) equivalence of the derived ODEs and preservation of geometric quantities under reparametrization, (ii) local existence and regularity near the rotation axis, (iii) comparison and barrier arguments to control curvature and intersection behavior with rays from the origin, and (iv) a shooting/mirror construction that enforces the 120 degree junction and orthogonality conditions required at the triple point of the fish network. Numerical solutions illustrate the shape and support the analytical construction. Overall, the work advances understanding of self-similar shrinkers for Gaussian curvature flow in rotational symmetry, fully resolving n=1 and outlining a pathway for n>1.</p>
     </div>
 
     <div class="pub-toggle hidden" id="bib-bachelor-2018">
-      <pre>TBD</pre>
+      <pre>@bachelorsthesis{krotz2018bachelor,
+  author = {Johannes Krotz},
+  title = {Gibt es Rotationssymmetrische Fische?},
+  school = {Universität Konstanz},
+  year = {2018},
+  type = {Bachelor's thesis},
+  note = {Mathematics}
+}</pre>
     </div>
 
     <div class="pub-toggle hidden" id="sum-bachelor-2018">
@@ -606,24 +644,33 @@ abstract = {We present the near-Maximal Algorithm for Poisson-disk Sampling (nMA
 
   <div class="pub-entry">
     <div class="pub-info">
-      <p class="pub-title">TBD</p>
+      <p class="pub-title">Quantum Transport in Topological Insulators - Superconductor Heterostructures</p>
       <p class="pub-authors"><u>Johannes Krotz</u></p>
-      <p class="pub-journal"><em>Bachelor's Thesis</em></p>
+      <p class="pub-journal"><em>Bachelor's Thesis (Physics)</em></p>
     </div>
 
     <div class="pub-buttons">
       <button class="pub-btn toggle-btn" data-target="abs-bachelor-2015">Abstract</button>
       <button class="pub-btn toggle-btn" data-target="bib-bachelor-2015">BibTeX</button>
-      <a class="pub-btn" href="#" target="_blank">URL</a>
+      <a class="pub-btn" href="{{ '/assets/Bachelor_Physik.pdf' | relative_url }}" target="_blank">PDF</a>
       <button class="pub-btn toggle-btn" data-target="sum-bachelor-2015">In Simple Terms</button>
     </div>
 
     <div class="pub-toggle hidden" id="abs-bachelor-2015">
-      <p>TBD</p>
+      <p>This thesis investigates quantum transport in two-dimensional time-reversal-invariant topological insulators, focusing on HgTe/CdTe quantum wells described by the Bernevig--Hughes--Zhang (BHZ) model. After reproducing the helical edge states protected against elastic backscattering, I derive an effective one-dimensional edge Hamiltonian and analyze how a localized magnetic (Zeeman) barrier breaks time-reversal symmetry, opens a gap in the edge spectrum, and enables controllable backscattering. In the low-energy limit, the resulting transmission and reflection yield a characteristic conductance suppression set by barrier strength and width.</p>
+      <p>Placing an $s$-wave superconductor in proximity to the edge, I project the full Bogoliubov--de Gennes description onto the edge subspace and show that subgap transport is dominated by perfect Andreev reflection at an NS interface and by phase-dependent Andreev bound states in an SNS junction with energies \(E=\lvert \alpha \rvert \cos(\varphi/2)\). The corresponding Josephson current exhibits the expected current--phase relation and, under a perpendicular magnetic field, distinct interference patterns that differentiate edge-dominated from bulk-dominated transport.</p>
+      <p>Finally, I propose transport protocols to extract microscopically the subband $g$-factors \((g_E,g_H)\) and superconducting order parameters \((\Delta_E,\Delta_H)\) from their effective edge quantities \(\hat{g}\) and \(\alpha\). By exploiting their linear dependence on a mixing parameter \(\gamma\) (set by BHZ parameters and sample thickness), measurements across devices with varied well thickness can determine these band-resolved couplings.</p>
     </div>
 
     <div class="pub-toggle hidden" id="bib-bachelor-2015">
-      <pre>TBD</pre>
+      <pre>@bachelorsthesis{krotz2015bachelor,
+  author = {Johannes Krotz},
+  title = {Quantum Transport in Topological Insulators - Superconductor Heterostructures},
+  school = {Universität Konstanz},
+  year = {2015},
+  type = {Bachelor's thesis},
+  note = {Physics}
+}</pre>
     </div>
 
     <div class="pub-toggle hidden" id="sum-bachelor-2015">
