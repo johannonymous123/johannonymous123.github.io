@@ -49,76 +49,68 @@ title: Publications
 
     <div class="pub-toggle hidden" id="sum-4">
   <p>
-    When scientists simulate how light, radiation, or particles move through a medium — whether inside a star, in the
-    Earth's atmosphere, or in a nuclear reactor — they use <strong>transport equations</strong>. At the heart of these
-    equations is a deceptively simple piece: the <strong>streaming term</strong>, which tracks how particles move forward
-    in space and direction.
+    Transport equations are used to model how light, radiation, or particles move through a medium. The part of the
+    equation that describes particles moving through space and changing direction is the <strong>streaming term</strong>.
+    In flat Cartesian coordinates this term has a familiar form. In curved or geometry-adapted coordinates, the same
+    term becomes more delicate.
   </p>
 
   <p>
-    This sounds straightforward, but there's a twist. Particles don't always move through nice, flat, box-shaped domains.
-    Often the geometry is curved — like spherical shells around a planet, cylindrical reactors, or more irregular shapes.
-    When the geometry is curved, the math describing particle directions also bends. Choosing the right coordinate system
-    can make the problem much easier — or much harder.
+    Many transport problems are not naturally box-shaped. They may involve spherical shells, cylindrical devices,
+    curved boundaries, or coordinate systems chosen to follow the geometry of the domain. In those settings, the
+    coordinates affect how particle directions are represented. A coordinate system can simplify the equations, but it
+    can also introduce extra terms that have to be understood carefully.
   </p>
 
-  <h3>The Core Idea: Curvature Meets Transport</h3>
+  <h3>What the Paper Does</h3>
   <p>
-    This work tackles the streaming term when the <em>coordinates</em> themselves are curved — so-called <strong>curvilinear
-    coordinates</strong>. Instead of sticking with the usual Cartesian grid, we allow coordinates that better match the
-    geometry of the problem (spheres, cylinders, ellipses, translating surfaces, etc.).
+    This paper derives the streaming term for transport equations written in <strong>curvilinear coordinates</strong>.
+    Instead of treating every coordinate system as a separate calculation, it gives a unified formula based on a local
+    orthonormal frame and curvature-related quantities.
   </p>
 
   <p>
-    The key contribution is a <strong>unified way</strong> to write the directional derivative (how particles stream) in
-    terms of <strong>curvature quantities</strong> — intuitive geometric measures of how surfaces bend and how directions
-    twist around each other. In plain terms:
+    The point is that the streaming operator depends not only on position and direction, but also on how the chosen
+    coordinate surfaces bend and how the local directions rotate from point to point. Written this way, the extra terms
+    in the transport equation have a direct geometric meaning.
   </p>
   <ul>
-    <li>The math of particle transport isn't just about position and direction.</li>
-    <li>It's also about how the <em>shape of space</em> (flat vs. curved) changes the apparent motion.</li>
-    <li>By expressing the streaming operator via curvatures, we see how geometry and physics interact.</li>
+    <li>The coordinate geometry determines which additional streaming terms appear.</li>
+    <li>Flat, curved, and twisting directions contribute in different ways.</li>
+    <li>Curvature gives a compact way to see how geometry enters the transport equation.</li>
   </ul>
 
-  <h3>Why This Matters</h3>
+  <h3>Why This Is Useful</h3>
   <p>
-    Traditionally, deriving the streaming term in a curved system requires tedious, case-by-case geometry. Each new
-    coordinate choice (spherical, cylindrical, elliptical…) brings its own messy formulas. This framework offers a
-    <strong>common language</strong> based on curvature, which helps in three ways:
+    Deriving the streaming term in a curved coordinate system is often done case by case. Spherical, cylindrical,
+    elliptical, and other coordinates each lead to their own formulas. The curvature-based formulation gives a common
+    structure behind these calculations.
   </p>
   <ul>
-    <li><strong>Simplification:</strong> it tells you when certain terms vanish in a given geometry, so the equations get simpler.</li>
-    <li><strong>Intuition:</strong> instead of pages of indices, you reason with "is the surface flat, curved, or twisting?"</li>
-    <li><strong>Practical guidance:</strong> it informs coordinate choices that balance tractability and accuracy.</li>
+    <li><strong>Simplification:</strong> it shows when terms disappear because of the geometry.</li>
+    <li><strong>Interpretation:</strong> it replaces some long coordinate calculations with geometric quantities.</li>
+    <li><strong>Guidance:</strong> it helps identify coordinate systems that make the equations easier to analyze or compute.</li>
   </ul>
 
-  <h3>Putting It Into Practice</h3>
+  <h3>Examples</h3>
   <p>
-    The paper walks through familiar cases — cylindrical and spherical setups — and also more involved choices like ellipsoids
-    or translating graphs. The general recipe shows:
+    The paper works through standard settings such as cylindrical and spherical coordinates, and also considers more
+    involved examples such as ellipsoids and translating graphs. The same framework explains why some geometries produce
+    simple formulas while others require additional curvature terms.
   </p>
   <ul>
-    <li><strong>Cylinders:</strong> several terms drop out because the relevant surfaces are flat and directions don't twist.</li>
-    <li><strong>Spheres:</strong> curvature naturally appears with clean, symmetric contributions.</li>
-    <li><strong>Ellipsoids / translating surfaces:</strong> complexity increases, but the curvature view still identifies which
-      pieces matter and why.</li>
+    <li><strong>Cylinders:</strong> several terms vanish because parts of the geometry are flat or do not twist.</li>
+    <li><strong>Spheres:</strong> curvature enters in a symmetric and recognizable way.</li>
+    <li><strong>Ellipsoids and translating surfaces:</strong> more terms remain, but the curvature formulation still shows where they come from.</li>
   </ul>
 
   <h3>Takeaway</h3>
   <p>
-    The contribution isn't a new solver; it's a <strong>geometric perspective</strong> that makes derivations clearer and
-    decisions more informed. By seeing transport through the lens of curvature, researchers can:
+    The paper does not introduce a new numerical solver. It gives a geometric way to derive and interpret the streaming
+    term. This can make derivations cleaner, help remove unnecessary terms, and support better coordinate choices for
+    transport simulations in curved geometries.
   </p>
-  <ul>
-    <li>avoid unnecessary terms,</li>
-    <li>understand the effect of geometry on streaming, and</li>
-    <li>choose coordinate systems that make the physics — and the computation — more manageable.</li>
-  </ul>
 
-  <p>
-    It's a modest but useful step: connecting particle transport — a cornerstone of many physical simulations — more directly
-    with the language of geometry.
-  </p>
     </div>
   </div>
 
@@ -173,81 +165,65 @@ abstract = {A Bayesian data assimilation scheme is formulated for advection-domi
     </div>
 <div class="pub-toggle hidden" id="sum-1">
   <p>
-    Imagine you’re trying to follow the spread of smoke in the air, or how pollutants drift and mix in a river. These
-    processes are driven by two forces: <strong>advection</strong> (movement along currents, carrying things downstream
-    or with the wind) and <strong>diffusion</strong> (spreading and blurring out over time). Scientists want to predict
-    these processes as accurately as possible — but the problem is, we never have perfect information. We rely on
-    <em>models</em> (our best guess of the physics) and <em>observations</em> (data from sensors). Blending these two
-    is called <strong>data assimilation</strong>.
+    Advection-diffusion equations model quantities that are carried by a flow and also spread out over time. Examples
+    include smoke in air, pollutants in a river, temperature, or concentration fields. Predictions usually combine a
+    physical model with sensor data, a process known as <strong>data assimilation</strong>.
   </p>
 
   <p>
-    The classic tool for this job is the <strong>Kalman Filter</strong>, which acts like a smart balance: constantly
-    correcting a model with incoming data. It works well when observations are plentiful and evenly spaced. But in the
-    real world, data is often <em>sparse</em> (only a few sensors, not everywhere all the time) — and this is exactly
-    where traditional methods begin to struggle.
+    A standard approach is the <strong>Kalman filter</strong>, which updates a model whenever new observations arrive.
+    It is effective in many settings, but it can struggle when observations are sparse. In transport problems, sparse
+    data are especially difficult because the main error is often not just the amount of material, but where that material
+    has moved.
   </p>
 
-  <h3>The Core Idea: A Dynamic Likelihood</h3>
+  <h3>What the Paper Does</h3>
   <p>
-    This paper develops the <strong>Dynamic Likelihood Filter (DLF)</strong> for advection–diffusion problems. The key
-    innovation is that instead of waiting passively for the next measurement, the DLF <em>projects existing observations
-    forward in time</em> along the natural flow of the system. In other words, it doesn’t just use a measurement once and
-    discard it. It “carries” that information along the path particles or pollutants would naturally follow, generating
-    <strong>pseudo-observations</strong> at new times and places where sensors may not exist.
+    This paper extends the <strong>Dynamic Likelihood Filter (DLF)</strong> to advection-diffusion problems. The DLF uses
+    observations not only at the time they are taken, but also propagates their information forward along the flow of the
+    system. This creates additional likelihood information at later times and locations, even where no sensor is present.
   </p>
 
   <p>
-    For the <em>advective part</em> of the process (the bulk flow), these pseudo-observations are especially powerful.
-    For the <em>diffusive part</em> (the spreading and smoothing), the DLF blends in predictions from the model itself.
-    Together, this allows the filter to maintain not only the <em>amount</em> of what is being transported, but also its
-    <em>location and phase</em> — something traditional methods tend to lose quickly as diffusion blurs the signal.
+    For the <em>advective</em> part of the dynamics, the method follows the motion suggested by the observations. For the
+    <em>diffusive</em> part, it combines the model with the observed information. This split lets the filter retain useful
+    phase and location information while still accounting for spreading and smoothing.
   </p>
 
-  <h3>Why This Matters</h3>
+  <h3>Where It Helps</h3>
   <p>
-    The DLF is designed for the kinds of real-world challenges that matter most:
+    The method is designed for cases where transport dominates diffusion and the data are limited but reliable.
   </p>
   <ul>
-    <li><strong>Sparse but reliable data:</strong> a few high-quality sensors instead of dense networks.</li>
-    <li><strong>Advection-dominated systems:</strong> where currents, winds, or flows move things much more than they diffuse.</li>
-    <li><strong>Uncertain models:</strong> situations where we know the equations but don’t capture every detail of reality.</li>
+    <li><strong>Sparse observations:</strong> only a few sensors are available.</li>
+    <li><strong>Advection-dominated dynamics:</strong> flow or wind moves the quantity more strongly than diffusion spreads it.</li>
+    <li><strong>Imperfect models:</strong> the governing equations are useful, but they do not capture every detail.</li>
   </ul>
   <p>
-    These situations arise in <strong>meteorology</strong> (weather forecasting with limited stations), <strong>environmental
-    monitoring</strong> (tracking contaminants in rivers or the atmosphere), and <strong>engineering</strong> (any process
-    where materials or signals are transported through space and time).
+    These conditions appear in weather forecasting, environmental monitoring, contaminant tracking, and engineering
+    transport problems.
   </p>
 
   <h3>What the Results Show</h3>
   <p>
-    Numerical experiments in the paper show that the DLF consistently outperforms the standard Kalman Filter when
-    advection dominates and data is sparse. It:
-  </p>
-  <ul>
-    <li>Produces more accurate estimates of both <em>intensity</em> and <em>location</em>.</li>
-    <li>Corrects errors in initial conditions more quickly.</li>
-    <li>Handles uncertain or slightly wrong models better, staying anchored to reality.</li>
-  </ul>
-  <p>
-    There is a tradeoff: the DLF requires more computation. But the paper demonstrates practical ways to manage this,
-    such as discarding “stale” pseudo-observations once they no longer add value. This keeps the method efficient while
-    retaining its accuracy advantage.
-  </p>
-
-  <h3>The Bigger Picture</h3>
-  <p>
-    Originally, the Dynamic Likelihood idea was built for wave problems. Extending it to advection–diffusion, one of
-    the most common forms of transport in nature and engineering,  shows its broader potential. By projecting
-    observations dynamically, the DLF squeezes more information out of every measurement. It makes data assimilation
-    <strong>smarter, more resilient to sparse data, and better at tracking where things actually are</strong>.
+    The numerical tests show that the DLF gives better estimates than a standard Kalman filter when advection is dominant
+    and observations are sparse with low uncertainty. It improves both the magnitude and location of the transported
+    quantity, corrects initial-condition errors more effectively, and remains useful when the model is not exact.
   </p>
 
   <p>
-    <em>In short:</em> The Dynamic Likelihood Filter lets us do more with less. It turns limited observations into a
-    continuous source of information, improving forecasts in fields from weather and climate science to pollution
-    monitoring and engineering transport problems.
+    The method has an added computational cost, scaling cubically with the number of observations used over time. This is
+    comparable in order to a standard Kalman filter, and the cost can be reduced by limiting how many propagated
+    observations are kept.
   </p>
+
+  <h3>Takeaway</h3>
+  <p>
+    The paper shows how to extend the Dynamic Likelihood idea from wave problems to advection-diffusion. By carrying
+    observational information forward with the flow, the method makes sparse measurements more useful for tracking
+    transported quantities.
+  </p>
+
 </div>
   </div>
 
@@ -296,60 +272,58 @@ abstract = {We present a hybrid method for time-dependent particle transport pro
     </pre>
   </div>
 
-  <div class="pub-toggle hidden" id="sum-2">  
+  <div class="pub-toggle hidden" id="sum-2">
   <p>
-    Imagine trying to predict how sunlight travels through Earth’s atmosphere, how radiation moves inside a nuclear reactor, 
-    or how heat from a laser interacts with a dense plasma. All of these processes involve <strong>particles moving, bouncing, 
-    and sometimes getting absorbed</strong> as they travel through a medium. Modeling these processes accurately is a monumental challenge. 
+    Particle transport problems appear in radiation shielding, nuclear engineering, atmospheric radiative transfer,
+    medical physics, plasma physics, and astrophysics. The goal is to predict how particles move through a material,
+    scatter, and sometimes get absorbed.
   </p>
 
   <p>
-    Traditionally, scientists have relied on two approaches: <em>deterministic methods</em>, which translate physics into large systems 
-    of equations, and <em>Monte Carlo methods</em>, which simulate particle paths randomly. Each has strengths and weaknesses. Deterministic 
-    methods can be precise but become prohibitively expensive at high resolution. Monte Carlo is flexible and natural for complex geometries, 
-    but it’s noisy and often requires an enormous number of samples to be reliable. 
+    Two common approaches are deterministic solvers and Monte Carlo methods. Deterministic solvers turn the physics into
+    large systems of equations. They can be accurate, but the cost grows quickly at high resolution. Monte Carlo methods
+    follow randomly sampled particle paths. They are flexible, but the results contain sampling noise unless many samples
+    are used.
   </p>
 
-  <h3>The Core Idea: Pre- and Post-Collision Particles</h3>
+  <h3>What the Paper Does</h3>
   <p>
-    The hybrid method presented in this paper blends the two approaches by recognizing that particles behave differently depending 
-    on whether they’ve collided yet. 
+    This paper combines the two approaches by separating particles into two groups: particles that have not collided yet
+    and particles that have already scattered.
   </p>
   <ul>
-    <li><strong>Pre-collision (uncollided):</strong> particles stream like rays of light. Their paths are straightforward, and Monte Carlo 
-    can handle them efficiently — essentially like ray tracing.</li>
-    <li><strong>Post-collision (collided):</strong> once particles scatter, their distribution becomes smoother and more diffuse. A deterministic 
-    solver is better suited here, capturing the averaged behavior without tracking every random path.</li>
+    <li><strong>Uncollided particles:</strong> these move along relatively simple paths and are handled efficiently with Monte Carlo.</li>
+    <li><strong>Collided particles:</strong> after scattering, their distribution is smoother and is handled with a deterministic discrete ordinates/discontinuous Galerkin solver.</li>
   </ul>
-  <p>
-    A clever <em>relabeling step</em> keeps the balance by periodically shifting some particles back into the pre-collision group, ensuring 
-    the method stays both accurate and efficient over time.
-  </p>
-
-  <h3>Results &amp; Takeaways</h3>
-  <p>
-    Across standard benchmark problems, the hybrid method consistently delivered <strong>greater accuracy at significantly lower cost</strong>. 
-    Unlike pure deterministic solvers, it avoided artificial streaks (“ray effects”), and unlike pure Monte Carlo, it didn’t require massive 
-    sample counts. Overall, it achieved comparable or better accuracy with <em>about an order of magnitude less computational complexity</em>.
-  </p>
-  <p>
-    This is more than a technical curiosity, it has direct relevance to <strong>nuclear engineering</strong>, <strong>astrophysics</strong>, 
-    <strong>medical physics</strong>, and <strong>fusion research</strong>. Anywhere particles stream and scatter through matter, this method 
-    can provide faster, cleaner, and more reliable simulations. 
-  </p>
-
-  <h3>Looking Ahead</h3>
-  <p>
-    While the current work focuses on single-energy problems, the approach naturally extends to more complex cases, such as multi-energy 
-    neutron transport or nonlinear radiative transfer in astrophysics. Future versions may even include adaptive strategies to automatically 
-    balance the two solvers as the simulation evolves. 
-  </p>
 
   <p>
-    <em>In short:</em> By treating particles before and after collisions differently,  Monte Carlo for the sharp, ray-like stage, and deterministic 
-    solvers for the scattered stage,  this hybrid method achieves what neither approach can do alone: <strong>faster, more accurate, 
-    and more practical simulations of particle transport</strong>.
+    The split makes the Monte Carlo part scattering-free, which simplifies that portion of the computation. Between time
+    steps, a projection or relabeling step moves information back into the uncollided category so the method can continue
+    efficiently over time.
   </p>
+
+  <h3>Results</h3>
+  <p>
+    On standard two-dimensional Cartesian test problems, the hybrid method improves accuracy compared with standard
+    discrete ordinates solutions and reduces computational complexity by about an order of magnitude. It also avoids some
+    of the typical drawbacks of the separate methods: less sampling noise than a purely Monte Carlo calculation and fewer
+    ray-effect artifacts than a purely deterministic angular discretization.
+  </p>
+
+  <h3>Why It Matters</h3>
+  <p>
+    The method is relevant anywhere particles stream and scatter through matter, including nuclear systems, radiation
+    transport, atmospheric modeling, medical physics, and fusion-related simulations. The main advantage is not that it
+    replaces either Monte Carlo or deterministic methods, but that it uses each where it is better suited.
+  </p>
+
+  <h3>What Comes Next</h3>
+  <p>
+    The paper focuses on single-energy problems. Natural extensions include multi-energy neutron transport, nonlinear
+    radiative transfer, and adaptive strategies that decide how to balance the stochastic and deterministic parts during
+    a simulation.
+  </p>
+
   </div>
 </div>
 
@@ -408,55 +382,52 @@ abstract = {We present the near-Maximal Algorithm for Poisson-disk Sampling (nMA
   </div>
 
   <div class="pub-toggle hidden" id="sum-3">
-
   <p>
-    When engineers and geoscientists model how water, oil, gas, or contaminants move underground, they often
-    need to account for cracks in the rock. These fractures form intricate networks that guide where fluids can
-    flow. To simulate this on a computer, you don’t just draw the fractures—you build a <strong>mesh</strong>:
-    a set of triangles (in 2D) or tetrahedra (in 3D) that fills the fractures and the surrounding rock.
+    Simulations of groundwater, oil, gas, or contaminant transport in fractured rock need a mesh that represents both the
+    fractures and the surrounding volume. The mesh is made of triangles in two dimensions or tetrahedra in three
+    dimensions. Its quality matters because poorly shaped elements can make numerical solvers inaccurate or unstable.
   </p>
 
   <p>
-    There’s a balancing act. If the mesh is too coarse, you miss important details. If it’s too fine, the simulation
-    can become prohibitively expensive. And if the mesh has poorly shaped elements, numerical solvers can struggle.
-    This paper introduces <strong>nMAPS</strong> (near-Maximal Algorithm for Poisson-disk Sampling), a way to
-    generate meshes that aim to be both efficient and well-balanced for discrete fracture networks (DFNs).
+    There is also a cost issue. A mesh that is too coarse misses important geometric detail, while a mesh that is too fine
+    is expensive to use. This paper introduces <strong>nMAPS</strong>, the near-Maximal Algorithm for Poisson-disk Sampling,
+    to generate variable-resolution point sets for meshes of discrete fracture networks.
   </p>
 
-  <h3>The Core Idea: Poisson-Disk Sampling</h3>
+  <h3>What the Method Does</h3>
   <p>
-    nMAPS starts by <em>sprinkling points</em> using <strong>Poisson-disk sampling</strong>. Think of scattering seeds
-    so that no two land too close together (to avoid clusters) and the whole area is covered (to avoid gaps).
-    nMAPS extends this with <strong>variable resolution</strong>: it places more points where fractures intersect, where
-    geometry and gradients are complex, and fewer points farther away, where things are smoother.
+    nMAPS uses <strong>Poisson-disk sampling</strong>: points are placed so that they are not too close to one another, but
+    still cover the domain well. The method allows the spacing to vary, so more points can be placed near intersections,
+    boundaries, or other important features, while smoother regions can use fewer points.
   </p>
 
   <p>
-    After placing points, nMAPS connects them with a <strong>Delaunay triangulation</strong> to make the mesh. In 2D,
-    this produces triangles that are better shaped for simulation. In 3D, the method includes a practical step to
-    <em>detect and remove “slivers”</em>, unhealthy, skinny tetrahedra, then re-triangulates, improving overall mesh quality.
+    After the points are placed, they are connected using a <strong>Delaunay triangulation</strong>. In two dimensions, the
+    method gives well-behaved triangular faces under conditions satisfied by the samples produced by nMAPS. In three
+    dimensions, it does not give the same formal quality bounds, but low-quality tetrahedra are uncommon and can be
+    detected and removed in practice.
   </p>
 
   <h3>Why It Matters</h3>
   <p>
-    Reliable meshes are essential for trustworthy simulations of fractured rock. By directly generating a variable-resolution
-    point set and then triangulating, nMAPS can reduce unnecessary computational effort while still capturing the features
-    that matter. In tests on synthetic DFNs, the approach produced well-shaped elements in 2D and reduced problematic
-    tetrahedra in 3D. It also compared favorably with existing workflows that refine meshes iteratively, with run times
-    that scale efficiently with the number of points.
+    The method gives a direct way to build meshes that are fine where they need to be and coarser elsewhere. Tests show
+    that nMAPS runs in linear time with respect to the number of accepted points and produces balanced meshes for
+    three-dimensional fracture networks and their surrounding volume.
   </p>
 
   <p>
-    This makes nMAPS a practical option for teams modeling groundwater flow, energy extraction, or contaminant transport
-    in fractured media, and it may be useful in other settings that face similar meshing challenges.
+    This is useful for simulations of fractured media, including groundwater flow, energy extraction, and contaminant
+    transport. The same idea may also be useful in other applications where variable-resolution meshes are needed around
+    complicated geometry.
   </p>
 
-  <h3>In Summary</h3>
+  <h3>Summary</h3>
   <p>
-    nMAPS offers a straightforward way to build meshes that balance accuracy, efficiency, and numerical robustness.
-    It doesn’t solve every meshing challenge, but it provides a useful step toward making fracture-network simulations
-    more dependable and accessible.
+    nMAPS provides an efficient way to generate point distributions for Delaunay meshes. It is not a complete solution to
+    every meshing problem, but it gives a practical route to meshes that balance resolution, cost, and element quality for
+    discrete fracture networks.
   </p>
+
 
 
 
@@ -539,23 +510,41 @@ abstract = {We present the near-Maximal Algorithm for Poisson-disk Sampling (nMA
     </div>
 
     <div class="pub-toggle hidden" id="sum-diss-2024">
-      <p>This dissertation brings together three innovative computational methods that blend probability with traditional numerical approaches to solve challenging problems in science and engineering. Rather than developing entirely new theory from scratch, it demonstrates how <strong>smart combinations of existing techniques</strong> can lead to significant improvements in computational performance and reliability.</p>
+      <p>
+        This dissertation collects three computational projects for numerical PDEs. Each project combines probabilistic
+        ideas with deterministic numerical methods, with the goal of improving accuracy, efficiency, or robustness in
+        problems that are difficult to solve directly.
+      </p>
       
-      <h3>Three Connected Innovations</h3>
-      <p>The dissertation consists of three main chapters, each corresponding to a published paper:</p>
+      <h3>The Three Parts</h3>
+      <p>The dissertation is organized around three main contributions, each connected to one of the papers listed above:</p>
       <ul>
-        <li><strong>Chapter 2:</strong> Developing better ways to create computational meshes for fractured rock systems (see the <em>Variable resolution Poisson-disk sampling</em> paper above for details)</li>
-        <li><strong>Chapter 3:</strong> Improving how we combine computer models with real-world data to track pollution and other transported substances (see the <em>Dynamic likelihood approach to filtering</em> paper above for details)</li>
-        <li><strong>Chapter 4:</strong> Creating hybrid solvers that combine random sampling with deterministic methods for radiation transport problems (see the <em>Hybrid Monte Carlo, discontinuous Galerkin method</em> paper above for details)</li>
+        <li><strong>Chapter 2:</strong> a method for creating variable-resolution meshes for fractured rock systems, based on the <em>Variable resolution Poisson-disk sampling</em> paper.</li>
+        <li><strong>Chapter 3:</strong> a data-assimilation method for tracking transported quantities with sparse observations, based on the <em>Dynamic likelihood approach to filtering</em> paper.</li>
+        <li><strong>Chapter 4:</strong> a hybrid solver for radiation transport that combines Monte Carlo sampling with deterministic methods, based on the <em>Hybrid Monte Carlo, discontinuous Galerkin method</em> paper.</li>
       </ul>
 
-      <h3>The Common Thread: Probabilistic Meets Deterministic</h3>
-      <p>While these three projects tackle different applications — underground fluid flow, environmental monitoring, and radiation transport — they share a common philosophy: <strong>combining the flexibility of probabilistic methods with the precision of deterministic approaches</strong>. This hybrid thinking allows each method to capture the best of both worlds while avoiding their individual weaknesses.</p>
+      <h3>Shared Theme</h3>
+      <p>
+        The projects address different applications: fractured-rock flow, environmental or engineering transport, and
+        particle transport. The common idea is to combine methods with different strengths. Probabilistic tools provide
+        flexibility and uncertainty-aware information, while deterministic solvers provide structure, accuracy, and
+        efficiency when the problem is smooth enough for them to be effective.
+      </p>
 
-      <h3>Real-World Impact</h3>
-      <p>The dissertation demonstrates that computational science doesn't always need revolutionary breakthroughs. Sometimes, <strong>thoughtful integration of existing tools</strong> can solve practical problems more effectively. Each method has been tested on realistic problems and shown to outperform traditional approaches, making complex simulations more accessible and reliable for engineers and scientists.</p>
+      <h3>Practical Role</h3>
+      <p>
+        The dissertation shows that useful improvements can come from combining existing numerical ideas in careful ways.
+        The methods are tested on realistic computational problems and compared against standard approaches. Across the
+        three projects, the emphasis is on making simulations more accurate, more efficient, or more reliable for problems
+        arising in science and engineering.
+      </p>
 
-      <p><em>In essence:</em> This work shows how probabilistic thinking can enhance traditional computational methods, leading to faster, more accurate, and more robust simulations across diverse fields in science and engineering.</p>
+      <p>
+        Overall, the dissertation uses probabilistic thinking to strengthen traditional computational methods for PDEs,
+        especially in problems involving meshes, transport, and data assimilation.
+      </p>
+
     </div>
   </div>
 
@@ -591,47 +580,50 @@ abstract = {We present the near-Maximal Algorithm for Poisson-disk Sampling (nMA
 
     <div class="pub-toggle hidden" id="sum-master-2019">
       <p>
-        This project marked the real beginning of my journey into computational and statistical physics, the world of simulations, stochastic models, and data-driven approaches. It combined physics, mathematics, and computation to study how complex materials form structure and stability from simple microscopic rules.
+        This thesis was my first substantial project in computational and statistical physics. It used simulation,
+        stochastic modeling, and data analysis to study how simple microscopic interaction rules can produce complex
+        material structures.
       </p>
 
-      <h3>The Core Idea</h3>
+      <h3>Main Question</h3>
       <p>
-        When you stir milk into coffee or mix nanoparticles into a liquid, the particles don't always just float around freely — sometimes they self-organize into networks that trap the liquid, forming a <strong>gel</strong>. Understanding how and why such gelation happens is a major challenge in soft matter physics and materials science.
+        Colloidal particles suspended in a liquid do not always remain evenly dispersed. If the particles attract each
+        other, they can form connected networks that trap the surrounding liquid and behave like a gel. This thesis studied
+        how such networks form for sticky spherical and rod-shaped particles.
       </p>
 
       <p>
-        This work simulated colloidal particles, tiny "sticky" spheres and rods that diffuse through a liquid and can attach to one another. Using <strong>Brownian dynamics simulations</strong>, it explored how these particles cluster, form networks, and eventually create gel-like structures that behave partly like solids and partly like fluids.
+        The work used <strong>Brownian dynamics simulations</strong> to model particles moving randomly through a liquid,
+        interacting, clustering, and eventually forming gel-like structures with both solid-like and fluid-like behavior.
       </p>
 
-      <h3>What the Thesis Explored</h3>
+      <h3>What the Thesis Covered</h3>
       <ul>
-        <li><strong>From theory to simulation:</strong> Developed and extended a C++ simulation framework to model thousands of interacting particles undergoing Brownian motion, governed by stochastic (random) differential equations derived from the Langevin equation.</li>
-        
-        <li><strong>Sticky rods and spheres:</strong> Investigated both spherical and rod-shaped (spherocylindrical) colloids, examining how their shape, density, and stickiness influence the formation of extended, percolating networks.</li>
-        
-        <li><strong>Rheology and structure:</strong> Simulated how these systems respond to small oscillating deformations, measuring the storage and loss moduli, which reveal how solid- or fluid-like a gel behaves over time. Applied topological and statistical analysis to characterize network formation, pore sizes, and the number of "holes" or connected structures within the gels.</li>
-        
-        <li><strong>Validation and comparison:</strong> Reproduced well-known results for sticky spheres, then successfully extended them to sticky rods. The simulation results were compared with experimental data on EuO-based nanorod gels grown in the lab.</li>
+        <li><strong>Simulation framework:</strong> developed and extended a C++ code for thousands of interacting particles governed by stochastic differential equations derived from Langevin dynamics.</li>
+        <li><strong>Sticky spheres and rods:</strong> studied how shape, density, and attraction strength affect clustering and the formation of percolating networks.</li>
+        <li><strong>Structure and rheology:</strong> analyzed cluster statistics, pore structure, topology, and the response to small oscillatory deformations through storage and loss moduli.</li>
+        <li><strong>Validation and comparison:</strong> reproduced benchmark results for sticky spheres, extended the approach to sticky rods, and compared simulations with experimental data on EuO-based nanorod gels.</li>
       </ul>
 
       <h3>Why It Matters</h3>
       <p>
-        The work demonstrated that computational models, blending stochastic dynamics, deterministic integration, and data analysis, can reproduce complex physical behavior like gelation and network formation from first principles.
+        The thesis showed how computational models can connect microscopic particle rules with larger-scale material
+        behavior. It also developed analysis tools for comparing simulations and experiments, including statistical and
+        topological measures of network formation.
       </p>
       
       <p>
-        It helped establish a framework for:
+        The framework helped link particle shape and interaction strength to gel structure, material response, and the
+        emergence of connected networks.
       </p>
-      <ul>
-        <li>linking microscopic particle models with macroscopic material properties,</li>
-        <li>using statistical measures (cluster size, topology, correlation functions) to extract physical insight, and</li>
-        <li>integrating simulations and experiments through quantitative comparison.</li>
-      </ul>
 
-      <h3>A Personal Note</h3>
+      <h3>Personal Note</h3>
       <p>
-        This project was my first deep dive into computational physics — building and debugging simulation codes, analyzing large datasets, and thinking statistically about noisy, nonlinear systems. It was here that stochastic and deterministic modeling came together for me for the first time. From there, the path toward data-driven physical modeling and machine learning for physical systems unfolded naturally.
+        This project introduced me to building and debugging simulation codes, working with large data sets, and analyzing
+        noisy nonlinear systems. It was also where stochastic and deterministic modeling first came together in my work,
+        leading naturally toward later projects in data-driven physical modeling.
       </p>
+
     </div>
   </div>
 
@@ -669,46 +661,48 @@ abstract = {We present the near-Maximal Algorithm for Poisson-disk Sampling (nMA
 
     <div class="pub-toggle hidden" id="sum-bachelor-2018">
       <p>
-        When shapes evolve under geometric rules — like how a soap bubble rounds itself out or a surface shrinks smoothly over time — mathematicians use something called <strong>curvature flows</strong> to describe this motion. These flows are powerful but can lead to surprising and sometimes whimsical shapes.
+        Curvature flows describe how shapes evolve when their motion is driven by curvature. They are used to study
+        surfaces that smooth out, shrink, or develop singularities over time. This thesis looked at one particular
+        geometric question involving a curve network with a fish-like outline.
       </p>
 
       <p>
-        This thesis explored a playful question:
-      </p>
-      
-      <p>
-        <em>Can there exist "fish-shaped" surfaces that shrink smoothly under the Gaussian curvature flow while keeping perfect rotational symmetry?</em>
+        The question was whether there can be rotationally symmetric, self-similarly shrinking versions of these
+        fish-shaped networks under Gaussian curvature flow.
       </p>
 
       <p>
-        The "fish" here isn't biological — it's a curve network (or surface) that looks vaguely like a fish outline, made of three smooth arcs meeting at 120° angles. Previous work had shown such one-dimensional (curve) "fish" can exist and shrink homothetically (i.e., maintain shape while uniformly scaling down). This project asked: does that idea extend to higher dimensions?
+        The “fish” is not a biological object. It is a geometric network made from smooth arcs meeting at 120 degree
+        angles. Earlier work had shown that one-dimensional fish-shaped curve networks can shrink homothetically, meaning
+        they keep their shape while scaling down. This thesis asked how much of that picture extends to higher dimensions.
       </p>
 
-      <h3>The Core Idea</h3>
+      <h3>What the Thesis Did</h3>
       <p>
-        The goal was to understand whether rotationally symmetric, self-similarly shrinking surfaces (the higher-dimensional analogs of those fish-shaped curves) could exist under curvature flow. The work involved translating the geometric problem into ordinary differential equations and analyzing these equations for possible solutions.
+        The geometric evolution problem was translated into ordinary differential equations using rotational symmetry.
+        The thesis then studied these equations through different parameterizations and analyzed whether they admit the
+        required shrinking shapes.
       </p>
 
-      <h3>What the Thesis Found</h3>
+      <h3>What It Found</h3>
       <ul>
-        <li><strong>For 1D (curve) cases:</strong> the known results were recovered and re-proved with an alternative method.</li>
-        <li><strong>For higher dimensions:</strong> the equations became more complex. Numerical experiments suggested such shapes might exist, but a full proof remained open.</li>
-        <li><strong>Along the way:</strong> the work derived several geometric relationships, showing how the curvature flow equations simplify when symmetry is present.</li>
+        <li><strong>One-dimensional case:</strong> the known existence result was recovered and proved by an alternative argument.</li>
+        <li><strong>Higher-dimensional case:</strong> the full existence problem remained open, but the analysis and numerical experiments gave evidence that such shapes may exist.</li>
+        <li><strong>Technical work:</strong> the thesis derived equivalent ODE formulations, studied regularity near the rotation axis, and used comparison and shooting arguments for the geometric constraints.</li>
       </ul>
 
       <h3>Why It Matters</h3>
       <p>
-        While the project had a light-hearted title, it trained fundamental skills:
+        The project developed tools for translating geometric intuition into equations and studying nonlinear systems
+        arising from curvature flow. It also showed how symmetry can simplify a geometric PDE while still leaving a
+        difficult analytical problem.
       </p>
-      <ul>
-        <li>translating geometric intuition into equations,</li>
-        <li>analyzing nonlinear differential systems, and</li>
-        <li>understanding the interplay between shape, symmetry, and curvature.</li>
-      </ul>
 
       <p>
-        <em>In essence:</em> it was a geometry-for-math's-sake project, a fun, rigorous exercise that honed analytical techniques while exploring how even abstract flows can generate charming, "fish-like" patterns.
+        In plain terms, this was a rigorous geometry project built around a playful shape: a way to study how curvature,
+        symmetry, and self-similar shrinking interact.
       </p>
+
     </div>
   </div>
 
@@ -747,41 +741,47 @@ abstract = {We present the near-Maximal Algorithm for Poisson-disk Sampling (nMA
 
     <div class="pub-toggle hidden" id="sum-bachelor-2015">
       <p>
-        In 2016, the Nobel Prize in Physics was awarded for discoveries related to topological phases of matter, exotic materials whose properties are protected by geometry rather than by ordinary symmetries. A few years earlier, this bachelor thesis explored one such system on a smaller, more theoretical scale: <strong>topological insulators</strong> and their interface with superconductors.
+        This bachelor thesis studied quantum transport in two-dimensional topological insulators coupled to superconductors.
+        These are materials that are insulating in the bulk but carry protected conducting states along their edges. The
+        work was done shortly before topological phases of matter received broad recognition through the 2016 Nobel Prize
+        in Physics.
       </p>
 
-      <h3>The Core Idea</h3>
+      <h3>Main Question</h3>
       <p>
-        Topological insulators are materials that act as electrical insulators inside but have perfectly conducting surfaces or edges. Electrons moving along these edges are "locked" to their spin direction, a phenomenon called <strong>spin–momentum locking</strong>, which protects them from backscattering and disorder. This makes them fascinating for potential applications in spintronics and quantum computing, especially when coupled to superconductors, where Majorana-like quasiparticles may emerge.
+        The thesis focused on HgTe/CdTe quantum wells described by the Bernevig-Hughes-Zhang model. In this model,
+        electrons move along the edge in helical states: their direction of motion is tied to their spin. This
+        spin-momentum locking protects the edge states against ordinary elastic backscattering.
       </p>
 
       <p>
-        The thesis focused on a two-dimensional quantum well made of HgTe/CdTe, the first experimentally realized topological insulator. Using the Bernevig–Hughes–Zhang (BHZ) model, it studied how magnetic barriers and superconducting regions affect the quantum transport along the material's edges.
+        The project asked how these edge states change when magnetic barriers or superconducting regions are added.
       </p>
 
-      <h3>What the Thesis Explored</h3>
+      <h3>What the Thesis Covered</h3>
       <ul>
-        <li><strong>Edge States:</strong> It reproduced the characteristic helical edge states of a 2D topological insulator, current-carrying modes that run along the edges but not through the bulk.</li>
-        
-        <li><strong>Magnetic Barriers:</strong> It showed how applying a magnetic field (which breaks time-reversal symmetry) opens a small energy gap and reduces conductivity.</li>
-        
-        <li><strong>Superconducting Proximity Effect:</strong> It then added superconductivity to the picture, where electron pairs "leak" from a nearby superconductor into the insulator, and analyzed Andreev reflection and Josephson effects that arise at such junctions.</li>
-        
-        <li><strong>Combined Effects:</strong> Finally, it proposed ways to extract physical parameters (like the effective <em>g</em>-factors and superconducting order parameters) experimentally by studying how conductance changes with magnetic field strength and geometry.</li>
+        <li><strong>Edge states:</strong> reproduced the helical edge modes of a two-dimensional topological insulator.</li>
+        <li><strong>Magnetic barriers:</strong> showed how breaking time-reversal symmetry opens a gap in the edge spectrum and allows controllable backscattering.</li>
+        <li><strong>Superconducting proximity effect:</strong> projected the superconducting problem onto the edge states and studied Andreev reflection and Josephson effects.</li>
+        <li><strong>Parameter extraction:</strong> proposed transport measurements for determining effective g-factors and superconducting order parameters from edge transport data.</li>
       </ul>
 
       <h3>Why It Matters</h3>
       <p>
-        While modest in scope, the project explored ideas that later became central to topological quantum materials, an area recognized by the Nobel Prize only a year later. The work connected quantum transport, superconductivity, and topology in one unified framework — themes that continue to influence condensed matter physics and quantum technology.
+        The project connected several themes in condensed matter physics: topology, superconductivity, magnetic symmetry
+        breaking, and quantum transport. It also studied mechanisms that are relevant to later work on topological quantum
+        materials and superconducting hybrid devices.
       </p>
 
-      <h3>A Personal Note</h3>
+      <h3>Personal Note</h3>
       <p>
-        This project was carried out at Reykjavík University, Iceland, in collaboration with both Reykjavík University and the University of Konstanz (Germany). Beyond the physics, it was a formative experience — an introduction to research in an inspiring international setting, full of late-night equations and early morning drinks (or viceversa), northern lights, and the humbling beauty of Iceland.
+        The project was carried out at Reykjavík University in collaboration with Reykjavík University and the University
+        of Konstanz. It was an early research experience in an international setting and an introduction to the mix of
+        model building, analytical calculation, and physical interpretation that runs through much of my later work.
       </p>
+
     </div>
   </div>
 
 </div>
-
 
