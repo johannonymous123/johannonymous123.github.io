@@ -11,10 +11,10 @@ title: About
       <p>I am a Postdoctoral Researcher in Aerospace and Mechanical Engineering at the University of Notre Dame. 
       </p>
       <p>
-      My research focuses on mathematical modeling and scientific computation with applications in physics and engineering.
+      My research develops numerical methods for kinetic and radiative transport, data assimilation, uncertainty quantification, and scientific machine learning.
       </p>
       <p>
-      This website is still a work in progress in will be further populated over time.
+      I am interested in controlled approximation: combining stochastic, deterministic, reduced, and data-driven methods while keeping their accuracy, uncertainty, and computational cost transparent.
       </p>
     </div>
   </div>
